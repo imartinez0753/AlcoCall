@@ -13,7 +13,8 @@ CREATE TABLE userInfo
     createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     password VARCHAR
     (255) NOT NULL,
-    favorite VARCHAR,
+    favorite VARCHAR
+    (255),
     PRIMARY KEY
     (id)
     );
