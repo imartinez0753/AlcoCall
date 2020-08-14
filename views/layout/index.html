@@ -3,41 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AlcoCall</title>
-
+    
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
     <link rel="stylesheet" href="../../public/assets/css/style.css" />
     <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
     />
+    <title>AlcoCall</title>
   </head>
-  <body class="grey lighten-2">
-    <!-- Container/Body content -->
-    <main class="container grey lighten-4">
+  
+  <!-- Container/Body content -->
+  
+  <body class="container grey lighten-2">
+    <!-- <main class="conatiner grey kighten-4"></main> -->
+       <nav class="nav-wrapper grey darken-4 z-depth-2">
           <!--Start Navigation Bar -->
-          <nav>
-            <div class="nav-wrapper grey darken-4">
-              <div class="left">
-                <a href="index.html">
-                  <img
-                    class="brand-logo"
-                    src="../../public/assets/images/alcocall_logo.png"
-                    alt="Alcocall Logo"
-                  />
-                  </div>
+          <div class="container">
+            <a href="index.html">
+              <img
+                class="brand-logo"
+                src="../../public/assets/images/alcocall_logo.png"
+                alt="Alcocall Logo"
+              />
+            </a>
+            <a href="#" class="sidenav-trigger" data-target="mobile-links">
+              <i class="material-icons">menu</i>
+            </a>
+            <ul class="right hide-on-med-and-down">
+              <li><a href="liquor_search.html">Recipes</a></li>
+              <li><a href="random.html">Random Drink</a></li>
+              <li><a href="bars.html">Bars</a></li>
+              <li><a href="beerSearch.html">Breweries</a></li>
+              <li>
+                <!-- <a href="#" class="btn-floating green darken-4 zed-depth-0">
+                  <i class="material-icons">notifications</i>
                 </a>
-              <ul id="nav-mobile" class="right hide-on-sm-and-down">
-                <li><a href="liquor_search.html">Recipes</a></li>
-                <li><a href="random.html">Random Drink</a></li>
-                <li><a href="bars.html">Bars</a></li>
-                <li><a href="beerSearch.html">Breweries</a></li>
-              </ul>
-            </div>
-          </nav>
+              </li>
+              <li><span class="badge white-text pink new">5</span></li> -->
+            </ul>
+          </div>
+       </nav>
+ 
+        <ul class="sidenav" id="mobile-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="liquor_search.html">Recipes</a></li>
+          <li><a href="random.html">Random Drink</a></li>
+          <li><a href="bars.html">Bars</a></li>
+          <li><a href="beerSearch.html">Breweries</a></li>
+        </ul>
           <!-- End of Navigation Bar -->
 
       <!-- Start of jumbotron/carousel element -->
@@ -159,7 +176,7 @@
           </div>
         </footer>
             
-      </main>
+    </main>
      <!-- Compiled and minified JavaScript -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="../../public/assets/js/script.js"></script>
