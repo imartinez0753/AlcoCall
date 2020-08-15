@@ -1,4 +1,4 @@
-//alert("Hi");
+//TODO: use for in to iterate through object from api
 $(document).ready(function () {
   //console.log("ready!");
   $.ajax({
@@ -7,14 +7,6 @@ $(document).ready(function () {
     method: "GET",
   }).then(function (response) {
     console.log(response);
-    //start of drink name
-    var randomDrinkName = $("<h2>");
-    randomDrinkName.attr("id", "drinkName");
-    randomDrinkName.text(
-      "Your drink is: " + response.drinks[0].strDrink
-    );
-    $("#ingList").prepend(randomDrinkName);
-    //end of drink name
 
     //start of image
     var drinkPic = $("<img>");
@@ -241,3 +233,8 @@ $(document).ready(function () {
     //end of instructions
   });
 });
+
+//TODO: put this code into a class/constuctor object and export for use in random drinks page and search page
+// class Recipe {
+//   constructor(measure, ingredient) {}
+// }
