@@ -8,18 +8,14 @@ $(document).ready(function () {
   }).then(function (response) {
     console.log(response);
 
-    //start of image
-    var drinkPic = $("<img>");
-    drinkPic.attr(
-      "src",
-      response.drinks[0].strDrinkThumb + "/preview"
-    );
-    drinkPic.addClass("center");
-    $("#drinkName").after(drinkPic);
-    console.log(response.drinks[0].strDrinkThumb);
-
     //Start of ingredients list
+
     var ing1 = $("<ul>");
+    for (ing1 in response.drinks[0]) {
+      switch (ingredients) {
+        case measure:
+      }
+    }
     ing1.text(
       response.drinks[0].strMeasure1 +
         " " +
