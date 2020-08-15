@@ -17,74 +17,35 @@ router.get("/", function (req, res) {
     // res.render("index", object);
   });
 });
+
 router.get("/liquor_search.html", function (req, res) {
-  userInfo.all(function (data) {
-    var object = {
-      userInfo: data
-    };
-    console.log(object);
-    res.sendFile(
-      path.join(__dirname + "/../views/layout/", "liquor_search.html")
-    );
-    // res.render("index", object);
-  });
+  res.sendFile(
+    path.join(__dirname + "/../views/layout/", "liquor_search.html")
+  );
+  // res.render("index", object);
 });
 
 router.get("/bars.html", function (req, res) {
-  userInfo.all(function (data) {
-    var object = {
-      userInfo: data
-    };
-    console.log(object);
-    res.sendFile(path.join(__dirname + "/../views/layout/", "bars.html"));
-    // res.render("index", object);
-  });
+  res.sendFile(path.join(__dirname + "/../views/layout/", "bars.html"));
+  // res.render("index", object);
 });
 
 router.get("/beerSearch.html", function (req, res) {
-  userInfo.all(function (data) {
-    var object = {
-      userInfo: data
-    };
-    console.log(object);
-    res.sendFile(path.join(__dirname + "/../views/layout/", "beersearch.html"));
-    // res.render("index", object);
-  });
+  res.sendFile(path.join(__dirname + "/../views/layout/", "beersearch.html"));
 });
 
 router.get("/random.html", function (req, res) {
-  userInfo.all(function (data) {
-    var object = {
-      userInfo: data
-    };
-    console.log(object);
-    res.sendFile(path.join(__dirname + "/../views/layout/", "random.html"));
-    // res.render("index", object);
-  });
+  res.sendFile(path.join(__dirname + "/../views/layout/", "random.html"));
 });
 
 router.get("/AlcoholReferences.html", function (req, res) {
-  userInfo.all(function (data) {
-    var object = {
-      userInfo: data
-    };
-    console.log(object);
-    res.sendFile(
-      path.join(__dirname + "/../views/layout/", "AlcoholReferences.html")
-    );
-    // res.render("index", object);
-  });
+  res.sendFile(
+    path.join(__dirname + "/../views/layout/", "AlcoholReferences.html")
+  );
 });
 
 router.get("/index.html", function (req, res) {
-  userInfo.all(function (data) {
-    var object = {
-      userInfo: data
-    };
-    console.log(object);
-    res.sendFile(path.join(__dirname + "/../views/layout/", "index.html"));
-    // res.render("index", object);
-  });
+  res.sendFile(path.join(__dirname + "/../views/layout/", "index.html"));
 });
 
 module.exports = router;
