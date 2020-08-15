@@ -12,7 +12,8 @@ router.get("/", function (req, res) {
       userInfo: data
     };
     console.log(object);
-    res.render("index", object);
+    return res;
+    // res.render("index", object);
   });
 });
 
