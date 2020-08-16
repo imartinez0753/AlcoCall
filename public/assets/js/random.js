@@ -2,26 +2,20 @@
 $(document).ready(function () {
   //console.log("ready!");
   $.ajax({
-    url:
-      "https://www.thecocktaildb.com/api/json/v1/1/random.php",
-    method: "GET",
+    url: "https://www.thecocktaildb.com/api/json/v1/1/random.php",
+    method: "GET"
   }).then(function (response) {
     console.log(response);
     //start of drink name
     var randomDrinkName = $("<h2>");
     randomDrinkName.attr("id", "drinkName");
-    randomDrinkName.text(
-      "Your drink is: " + response.drinks[0].strDrink
-    );
+    randomDrinkName.text(response.drinks[0].strDrink);
     $("#ingList").prepend(randomDrinkName);
     //end of drink name
 
     //start of image
     var drinkPic = $("<img>");
-    drinkPic.attr(
-      "src",
-      response.drinks[0].strDrinkThumb + "/preview"
-    );
+    drinkPic.attr("src", response.drinks[0].strDrinkThumb + "/preview");
     drinkPic.addClass("center");
     $("#drinkName").after(drinkPic);
     console.log(response.drinks[0].strDrinkThumb);
@@ -29,9 +23,13 @@ $(document).ready(function () {
     //Start of ingredients list
     var ing1 = $("<ul>");
     ing1.text(
+<<<<<<< HEAD
       response.drinks[0].strMeasure1 +
         " " +
         response.drinks[0].strIngredient1
+=======
+      response.drinks[0].strMeasure1 + response.drinks[0].strIngredient1
+>>>>>>> master
     );
     $("#ingList").append(ing1);
 
@@ -42,9 +40,13 @@ $(document).ready(function () {
     } else {
       var ing2 = $("<ul>");
       ing2.text(
+<<<<<<< HEAD
         response.drinks[0].strMeasure2 +
           " " +
           response.drinks[0].strIngredient2
+=======
+        response.drinks[0].strMeasure2 + response.drinks[0].strIngredient2
+>>>>>>> master
       );
       $("#ingList").append(ing2);
     }
@@ -56,9 +58,13 @@ $(document).ready(function () {
     } else {
       var ing3 = $("<ul>");
       ing3.text(
+<<<<<<< HEAD
         response.drinks[0].strMeasure3 +
           " " +
           response.drinks[0].strIngredient3
+=======
+        response.drinks[0].strMeasure3 + response.drinks[0].strIngredient3
+>>>>>>> master
       );
       $("#ingList").append(ing3);
     }
@@ -70,9 +76,13 @@ $(document).ready(function () {
     } else {
       var ing4 = $("<ul>");
       ing4.text(
+<<<<<<< HEAD
         response.drinks[0].strMeasure4 +
           " " +
           response.drinks[0].strIngredient4
+=======
+        response.drinks[0].strMeasure4 + response.drinks[0].strIngredient4
+>>>>>>> master
       );
       $("#ingList").append(ing4);
     }
@@ -84,9 +94,13 @@ $(document).ready(function () {
     } else {
       var ing5 = $("<ul>");
       ing5.text(
+<<<<<<< HEAD
         response.drinks[0].strMeasure5 +
           " " +
           response.drinks[0].strIngredient5
+=======
+        response.drinks[0].strMeasure5 + response.drinks[0].strIngredient5
+>>>>>>> master
       );
       $("#ingList").append(ing5);
     }
@@ -98,9 +112,13 @@ $(document).ready(function () {
     } else {
       var ing6 = $("<ul>");
       ing6.text(
+<<<<<<< HEAD
         response.drinks[0].strMeasure6 +
           " " +
           response.drinks[0].strIngredient6
+=======
+        response.drinks[0].strMeasure6 + response.drinks[0].strIngredient6
+>>>>>>> master
       );
       $("#ingList").append(ing6);
     }
@@ -112,9 +130,13 @@ $(document).ready(function () {
     } else {
       var ing7 = $("<ul>");
       ing7.text(
+<<<<<<< HEAD
         response.drinks[0].strMeasure7 +
           " " +
           response.drinks[0].strIngredient7
+=======
+        response.drinks[0].strMeasure7 + response.drinks[0].strIngredient7
+>>>>>>> master
       );
       $("#ingList").append(ing7);
     }
@@ -126,9 +148,13 @@ $(document).ready(function () {
     } else {
       var ing8 = $("<ul>");
       ing8.text(
+<<<<<<< HEAD
         response.drinks[0].strMeasure8 +
           " " +
           response.drinks[0].strIngredient8
+=======
+        response.drinks[0].strMeasure8 + response.drinks[0].strIngredient8
+>>>>>>> master
       );
       $("#ingList").append(ing8);
     }
@@ -140,9 +166,13 @@ $(document).ready(function () {
     } else {
       var ing9 = $("<ul>");
       ing9.text(
+<<<<<<< HEAD
         response.drinks[0].strMeasure9 +
           " " +
           response.drinks[0].strIngredient9
+=======
+        response.drinks[0].strMeasure9 + response.drinks[0].strIngredient9
+>>>>>>> master
       );
       $("#ingList").append(ing9);
     }
@@ -154,9 +184,13 @@ $(document).ready(function () {
     } else {
       var ing10 = $("<ul>");
       ing10.text(
+<<<<<<< HEAD
         response.drinks[0].strMeasure10 +
           " " +
           response.drinks[0].strIngredient10
+=======
+        response.drinks[0].strMeasure10 + response.drinks[0].strIngredient10
+>>>>>>> master
       );
       $("#ingList").append(ing10);
     }
@@ -168,9 +202,13 @@ $(document).ready(function () {
     } else {
       var ing11 = $("<ul>");
       ing11.text(
+<<<<<<< HEAD
         response.drinks[0].strMeasure11 +
           " " +
           response.drinks[0].strIngredient11
+=======
+        response.drinks[0].strMeasure11 + response.drinks[0].strIngredient11
+>>>>>>> master
       );
       $("#ingList").append(ing11);
     }
@@ -182,9 +220,13 @@ $(document).ready(function () {
     } else {
       var ing12 = $("<ul>");
       ing12.text(
+<<<<<<< HEAD
         response.drinks[0].strMeasure12 +
           " " +
           response.drinks[0].strIngredient12
+=======
+        response.drinks[0].strMeasure12 + response.drinks[0].strIngredient12
+>>>>>>> master
       );
       $("#ingList").append(ing12);
     }
@@ -196,9 +238,13 @@ $(document).ready(function () {
     } else {
       var ing13 = $("<ul>");
       ing13.text(
+<<<<<<< HEAD
         response.drinks[0].strMeasure13 +
           " " +
           response.drinks[0].strIngredient13
+=======
+        response.drinks[0].strMeasure13 + response.drinks[0].strIngredient13
+>>>>>>> master
       );
       $("#ingList").append(ing13);
     }
@@ -210,9 +256,13 @@ $(document).ready(function () {
     } else {
       var ing14 = $("<ul>");
       ing14.text(
+<<<<<<< HEAD
         response.drinks[0].strMeasure14 +
           " " +
           response.drinks[0].strIngredient14
+=======
+        response.drinks[0].strMeasure14 + response.drinks[0].strIngredient14
+>>>>>>> master
       );
       $("#ingList").append(ing14);
     }
@@ -224,9 +274,13 @@ $(document).ready(function () {
     } else {
       var ing15 = $("<ul>");
       ing15.text(
+<<<<<<< HEAD
         response.drinks[0].strMeasure15 +
           " " +
           response.drinks[0].strIngredient15
+=======
+        response.drinks[0].strMeasure15 + response.drinks[0].strIngredient15
+>>>>>>> master
       );
       $("#ingList").append(ing15);
     }
@@ -244,11 +298,7 @@ $(document).ready(function () {
 
     //start of serving instructions
     var serve = $("<p>");
-    serve.text(
-      "Serve in a " +
-        response.drinks[0].strGlass +
-        ". Cheers!"
-    );
+    serve.text("Serve in a " + response.drinks[0].strGlass + ". Cheers!");
     $("#ins").append(serve);
     console.log(serve);
     console.log(response.drinks[0].strGlass);
