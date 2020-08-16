@@ -3,7 +3,6 @@ var path = require("path");
 
 var router = express.Router();
 
-// Import the model burger.js) to use its database functions.
 var userInfo = require("../models/userInfo.js");
 
 // Create all our routes and set up logic within those routes where required.
@@ -46,6 +45,21 @@ router.get("/AlcoholReferences.html", function (req, res) {
 
 router.get("/index.html", function (req, res) {
   res.sendFile(path.join(__dirname + "/../views/layout/", "index.html"));
+});
+router.get("/signIn.html", function (req, res) {
+  res.sendFile(path.join(__dirname + "/../views/layout/", "signIn.html"));
+});
+
+router.post("/api/userInfo", function (req, res) {
+  // console.log(req.body);
+  userInfo.create(
+    ["userName", "DOB", "password"],
+    [req.body.userName, req.body.DOB, req.body.password],
+    function (result) {
+      // Send back the ID of the new quote
+      res.json({ id: result.insertId });
+    }
+  );
 });
 
 module.exports = router;
