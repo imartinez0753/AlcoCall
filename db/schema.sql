@@ -9,7 +9,7 @@ CREATE TABLE userInfo
     AUTO_INCREMENT,
     userName varchar
     (255) NOT NULL,
-    DOB int NOT NULL,
+    DOB DATE NOT NULL,
     createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     password VARCHAR
     (255) NOT NULL,
