@@ -1,107 +1,133 @@
 $(document).ready(function () {
+  function cocktailCall(liquor) {
+    $.ajax({
+      url: "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + liquor,
+      method: "GET"
+    }).then(function (response) {
+      $("#" + liquor + "Input").on("click", function () {
+        $("#select").empty();
+        for (var i = 0; i < response.drinks.length; i++) {
+          var drinkList = $("<option>");
+          drinkList.attr("value", response.drinks[i].idDrink);
+          drinkList.addClass("option");
+          drinkList.text(response.drinks[i].strDrink);
+          // console.log(response.drinks[i].strDrink);
+          // drinkList.attr("data-drinkId", response.drinks[i].idDrink);
+          $("#select").append(drinkList);
+        }
+      });
+    });
+  }
+  cocktailCall("vodka");
+  cocktailCall("whiskey");
+  cocktailCall("gin");
+  cocktailCall("rum");
+  cocktailCall("Non_Alcoholic");
+  cocktailCall("tequila");
+
   //------------------------------------------------------------------------------------
-  $.ajax({
-    url: "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=vodka",
-    method: "GET"
-  }).then(function (response) {
-    $("#vodkaInput").on("click", function () {
-      $("#select").empty();
-      for (var i = 0; i < response.drinks.length; i++) {
-        var drinkList = $("<option>");
-        drinkList.attr("value", response.drinks[i].idDrink);
-        drinkList.addClass("option");
-        drinkList.text(response.drinks[i].strDrink);
-        // drinkList.attr("data-drinkId", response.drinks[i].idDrink);
-        $("#select").append(drinkList);
-      }
-    });
-  });
-  //---------------------------------------------------------------------------------
-  $.ajax({
-    url: "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=whiskey",
-    method: "GET"
-  }).then(function (response) {
-    $("#whiskeyInput").on("click", function () {
-      $("#select").empty();
-      for (var i = 0; i < response.drinks.length; i++) {
-        var drinkList = $("<option>");
-        drinkList.attr("value", response.drinks[i].idDrink);
-        drinkList.addClass("option");
-        drinkList.text(response.drinks[i].strDrink);
-        // drinkList.attr("data-drinkId", response.drinks[i].idDrink);
-        $("#select").append(drinkList);
-      }
-    });
-  });
-  //-----------------------------------------------------------------------------------------
-  $.ajax({
-    url: "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=gin",
-    method: "GET"
-  }).then(function (response) {
-    $("#ginInput").on("click", function () {
-      $("#select").empty();
-      for (var i = 0; i < response.drinks.length; i++) {
-        var drinkList = $("<option>");
-        drinkList.attr("value", response.drinks[i].idDrink);
-        drinkList.addClass("option");
-        drinkList.text(response.drinks[i].strDrink);
-        // drinkList.attr("data-drinkId", response.drinks[i].idDrink);
-        $("#select").append(drinkList);
-      }
-    });
-  });
-  //-----------------------------------------------------------------------------------------
-  $.ajax({
-    url: "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=rum",
-    method: "GET"
-  }).then(function (response) {
-    $("#rumInput").on("click", function () {
-      $("#select").empty();
-      for (var i = 0; i < response.drinks.length; i++) {
-        var drinkList = $("<option>");
-        drinkList.attr("value", response.drinks[i].idDrink);
-        drinkList.addClass("option");
-        drinkList.text(response.drinks[i].strDrink);
-        // drinkList.attr("data-drinkId", response.drinks[i].idDrink);
-        $("#select").append(drinkList);
-      }
-    });
-  });
-  //-----------------------------------------------------------------------------------------
-  $.ajax({
-    url: "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=tequila",
-    method: "GET"
-  }).then(function (response) {
-    $("#tequilaInput").on("click", function () {
-      $("#select").empty();
-      for (var i = 0; i < response.drinks.length; i++) {
-        var drinkList = $("<option>");
-        drinkList.attr("value", response.drinks[i].idDrink);
-        drinkList.addClass("option");
-        drinkList.text(response.drinks[i].strDrink);
-        // drinkList.attr("data-drinkId", response.drinks[i].idDrink);
-        $("#select").append(drinkList);
-      }
-    });
-  });
-  //-----------------------------------------------------------------------------------------
-  $.ajax({
-    url:
-      "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic",
-    method: "GET"
-  }).then(function (response) {
-    $("#nonInput").on("click", function () {
-      $("#select").empty();
-      for (var i = 0; i < response.drinks.length; i++) {
-        var drinkList = $("<option>");
-        drinkList.attr("value", response.drinks[i].idDrink);
-        drinkList.addClass("option");
-        drinkList.text(response.drinks[i].strDrink);
-        // drinkList.attr("data-drinkId", response.drinks[i].idDrink);
-        $("#select").append(drinkList);
-      }
-    });
-  });
+  // $.ajax({
+  //   url: "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=vodka",
+  //   method: "GET"
+  // }).then(function (response) {
+  //   $("#vodkaInput").on("click", function () {
+  //     $("#select").empty();
+  //     for (var i = 0; i < response.drinks.length; i++) {
+  //       var drinkList = $("<option>");
+  //       drinkList.attr("value", response.drinks[i].idDrink);
+  //       drinkList.addClass("option");
+  //       drinkList.text(response.drinks[i].strDrink);
+  //       // drinkList.attr("data-drinkId", response.drinks[i].idDrink);
+  //       $("#select").append(drinkList);
+  //     }
+  //   });
+  // });
+  // //---------------------------------------------------------------------------------
+  // $.ajax({
+  //   url: "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=whiskey",
+  //   method: "GET"
+  // }).then(function (response) {
+  //   $("#whiskeyInput").on("click", function () {
+  //     $("#select").empty();
+  //     for (var i = 0; i < response.drinks.length; i++) {
+  //       var drinkList = $("<option>");
+  //       drinkList.attr("value", response.drinks[i].idDrink);
+  //       drinkList.addClass("option");
+  //       drinkList.text(response.drinks[i].strDrink);
+  //       // drinkList.attr("data-drinkId", response.drinks[i].idDrink);
+  //       $("#select").append(drinkList);
+  //     }
+  //   });
+  // });
+  // //-----------------------------------------------------------------------------------------
+  // $.ajax({
+  //   url: "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=gin",
+  //   method: "GET"
+  // }).then(function (response) {
+  //   $("#ginInput").on("click", function () {
+  //     $("#select").empty();
+  //     for (var i = 0; i < response.drinks.length; i++) {
+  //       var drinkList = $("<option>");
+  //       drinkList.attr("value", response.drinks[i].idDrink);
+  //       drinkList.addClass("option");
+  //       drinkList.text(response.drinks[i].strDrink);
+  //       // drinkList.attr("data-drinkId", response.drinks[i].idDrink);
+  //       $("#select").append(drinkList);
+  //     }
+  //   });
+  // });
+  // //-----------------------------------------------------------------------------------------
+  // $.ajax({
+  //   url: "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=rum",
+  //   method: "GET"
+  // }).then(function (response) {
+  //   $("#rumInput").on("click", function () {
+  //     $("#select").empty();
+  //     for (var i = 0; i < response.drinks.length; i++) {
+  //       var drinkList = $("<option>");
+  //       drinkList.attr("value", response.drinks[i].idDrink);
+  //       drinkList.addClass("option");
+  //       drinkList.text(response.drinks[i].strDrink);
+  //       // drinkList.attr("data-drinkId", response.drinks[i].idDrink);
+  //       $("#select").append(drinkList);
+  //     }
+  //   });
+  // });
+  // //-----------------------------------------------------------------------------------------
+  // $.ajax({
+  //   url: "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=tequila",
+  //   method: "GET"
+  // }).then(function (response) {
+  //   $("#tequilaInput").on("click", function () {
+  //     $("#select").empty();
+  //     for (var i = 0; i < response.drinks.length; i++) {
+  //       var drinkList = $("<option>");
+  //       drinkList.attr("value", response.drinks[i].idDrink);
+  //       drinkList.addClass("option");
+  //       drinkList.text(response.drinks[i].strDrink);
+  //       // drinkList.attr("data-drinkId", response.drinks[i].idDrink);
+  //       $("#select").append(drinkList);
+  //     }
+  //   });
+  // });
+  // //-----------------------------------------------------------------------------------------
+  // $.ajax({
+  //   url:
+  //     "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic",
+  //   method: "GET"
+  // }).then(function (response) {
+  //   $("#nonInput").on("click", function () {
+  //     $("#select").empty();
+  //     for (var i = 0; i < response.drinks.length; i++) {
+  //       var drinkList = $("<option>");
+  //       drinkList.attr("value", response.drinks[i].idDrink);
+  //       drinkList.addClass("option");
+  //       drinkList.text(response.drinks[i].strDrink);
+  //       // drinkList.attr("data-drinkId", response.drinks[i].idDrink);
+  //       $("#select").append(drinkList);
+  //     }
+  //   });
+  // });
   //-----------------------------------------------------------------------------------------
   $("select").on("change", function () {
     // alert("hit");
