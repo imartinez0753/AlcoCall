@@ -1,12 +1,20 @@
 $(document).ready(function () {
+  // $("select").on("change", function () {});
   $("#submit").on("click", function (event) {
     console.log("submit");
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
-
+    console.log(moment($("#DOB").val().trim(), "YYYY-MM-DD", true).isValid());
+    console.log($("#DOB").val().trim());
     var newUserName = {
       userName: $("#userName").val().trim(),
-      DOB: $("#DOB").val().trim(),
+      DOB: function DOBChecker() {
+        if (moment($("#DOB").val().trim(), "YYYY-MM-DD").isValid() === true) {
+          return $("#DOB").val().trim();
+        } else {
+          prompt("date must be yyyy-mm-dd");
+        }
+      },
       password: $("#password").val().trim()
     };
     //===================================================
