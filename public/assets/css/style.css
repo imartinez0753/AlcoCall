@@ -6,47 +6,47 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.container {
-  text-align: center;
-  color: dimgray;
-  background-color: dimgrey;
-}
-
-.brand-logo {
-  left: 15px;
-  margin-top: 7px;
-  right: auto;
-  float: left;
-  padding-left: 25px;
-}
-
-.main-text-section {
-  padding: 20px;
-}
-
-.main-text {
-  padding-left: 25px;
-  padding-right: 25px;
-} /* Classes ------------------------- */
-
-.body {
-  margin: 0;
-  padding: 0;
+.nav-bar {
+  min-height: 65px;
+  padding-top: px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.container {
-  text-align: center;
+.wide-container {
+  width: 90%;
+}
+
+.carousel-container {
+  /* text-align: center; */
   color: dimgray;
   background-color: lightgrey;
+  width: 100%;
+}
+
+.iframe-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+
+/* Then style the iframe to fit in the container div with full height and width */
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .brand-logo {
-  left: 15px;
   margin-top: 7px;
-  right: auto;
-  float: left;
-  padding-left: 25px;
+  /* right: auto; */
+  /* float: left; */
+  /* padding-left: 15px; */
+  padding-top: 5px;
 }
 
 .main-text-section {
@@ -89,6 +89,27 @@ h5 {
   color: gold;
 }
 
+.media-section {
+  border: dimgray;
+  border-width: 1px;
+}
+.sidenav {
+  background-color: white;
+  color: white;
+}
+.wide-footer {
+  margin: 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 245px; /* Height of the footer */
+  background: #6cf;
+}
+
+.footer-copyright {
+  font-size: x-small;
+}
+
 /* .carousel {
   display: block;
 } */
@@ -108,11 +129,6 @@ h5 {
 
 #barSearch {
   padding: 35px;
-}
-
-.media-section {
-  border: dimgray;
-  border-width: 1px;
 }
 
 #youTube {
@@ -162,55 +178,3 @@ h5 {
 
 h1 {
 }
-
-/* .carousel {
-  display: block;
-} */
-/* ID's ------------------------------- */
-
-#nav-mobile {
-  color: cadetblue;
-}
-
-#liquorSearch {
-  padding: 35px;
-}
-
-#randomDrink {
-  padding: 35px;
-}
-
-#barSearch {
-  padding: 35px;
-}
-
-.media-section {
-  border: dimgray;
-  border-width: 1px;
-}
-
-#youTube {
-  padding-left: 60px;
-  padding-bottom: 40px;
-  border: dimgray;
-  border-width: 1px;
-}
-
-#maps {
-  padding-top: 20px;
-}
-
-#alcoholInput {
-}
-
-#rumInput {
-}
-
-#tequilaInput {
-}
-
-#chooseRecipe {
-  display: block;
-}
-
-/* Test --------------------------- */
