@@ -1,14 +1,19 @@
 $(document).ready(function () {
   function cocktailCall(liquor) {
     $.ajax({
-      url: "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + liquor,
-      method: "GET"
+      url:
+        "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" +
+        liquor,
+      method: "GET",
     }).then(function (response) {
       $("#" + liquor + "Input").on("click", function () {
         $("#select").empty();
         for (var i = 0; i < response.drinks.length; i++) {
           var drinkList = $("<option>");
-          drinkList.attr("value", response.drinks[i].idDrink);
+          drinkList.attr(
+            "value",
+            response.drinks[i].idDrink
+          );
           drinkList.addClass("option");
           drinkList.text(response.drinks[i].strDrink);
           // console.log(response.drinks[i].strDrink);
@@ -27,7 +32,7 @@ $(document).ready(function () {
   $.ajax({
     url:
       "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic",
-    method: "GET"
+    method: "GET",
   }).then(function (response) {
     $("#Non_AlcoholicInput").on("click", function () {
       $("#select").empty();
@@ -50,22 +55,35 @@ $(document).ready(function () {
 
     $.ajax({
       url:
-        "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + drinkNum,
-      method: "GET"
+        "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" +
+        drinkNum,
+      method: "GET",
     }).then(function (response) {
       console.log(response);
       //-----------------------------------------------------------------------------------------------------
 
       console.log(response);
-      //start of drink name
-      var randomDrinkName = $("<h2>");
-      randomDrinkName.attr("id", "drinkName");
-      randomDrinkName.text(response.drinks[0].strDrink);
-      $("#alcoholDisplay").prepend(randomDrinkName);
-      //Start of ingredients list
+      //Gets drink name
+      var drinkName = $("<h2>");
+      drinkName.attr("id", "drinkName");
+      drinkName.text(response.drinks[0].strDrink);
+      $("#alcoholDisplay").prepend(drinkName);
+
+      //Gets drink image
+      var drinkImg = $("<img>");
+      drinkImg.attr(
+        "src",
+        response.drinks[0].strDrinkThumb + "/preview"
+      );
+      $("#drinkName").after(drinkImg);
+      console.log(response.drinks[0].strDrinkThumb);
+      //------------------------------------------------------------------------------------------------------
+      //Gets ingredients list
       var ing1 = $("<ul>");
       ing1.text(
-        response.drinks[0].strMeasure1 + response.drinks[0].strIngredient1
+        response.drinks[0].strMeasure1 +
+          " " +
+          response.drinks[0].strIngredient1
       );
       $("#alcoholDisplay").append(ing1);
 
@@ -76,7 +94,9 @@ $(document).ready(function () {
       } else {
         var ing2 = $("<ul>");
         ing2.text(
-          response.drinks[0].strMeasure2 + response.drinks[0].strIngredient2
+          response.drinks[0].strMeasure2 +
+            " " +
+            response.drinks[0].strIngredient2
         );
         $("#alcoholDisplay").append(ing2);
       }
@@ -88,7 +108,9 @@ $(document).ready(function () {
       } else {
         var ing3 = $("<ul>");
         ing3.text(
-          response.drinks[0].strMeasure3 + response.drinks[0].strIngredient3
+          response.drinks[0].strMeasure3 +
+            " " +
+            response.drinks[0].strIngredient3
         );
         $("#alcoholDisplay").append(ing3);
       }
@@ -100,7 +122,9 @@ $(document).ready(function () {
       } else {
         var ing4 = $("<ul>");
         ing4.text(
-          response.drinks[0].strMeasure4 + response.drinks[0].strIngredient4
+          response.drinks[0].strMeasure4 +
+            " " +
+            response.drinks[0].strIngredient4
         );
         $("#alcoholDisplay").append(ing4);
       }
@@ -112,7 +136,9 @@ $(document).ready(function () {
       } else {
         var ing5 = $("<ul>");
         ing5.text(
-          response.drinks[0].strMeasure5 + response.drinks[0].strIngredient5
+          response.drinks[0].strMeasure5 +
+            " " +
+            response.drinks[0].strIngredient5
         );
         $("#alcoholDisplay").append(ing5);
       }
@@ -124,7 +150,9 @@ $(document).ready(function () {
       } else {
         var ing6 = $("<ul>");
         ing6.text(
-          response.drinks[0].strMeasure6 + response.drinks[0].strIngredient6
+          response.drinks[0].strMeasure6 +
+            " " +
+            response.drinks[0].strIngredient6
         );
         $("#alcoholDisplay").append(ing6);
       }
@@ -136,7 +164,9 @@ $(document).ready(function () {
       } else {
         var ing7 = $("<ul>");
         ing7.text(
-          response.drinks[0].strMeasure7 + response.drinks[0].strIngredient7
+          response.drinks[0].strMeasure7 +
+            " " +
+            response.drinks[0].strIngredient7
         );
         $("#alcoholDisplay").append(ing7);
       }
@@ -148,7 +178,9 @@ $(document).ready(function () {
       } else {
         var ing8 = $("<ul>");
         ing8.text(
-          response.drinks[0].strMeasure8 + response.drinks[0].strIngredient8
+          response.drinks[0].strMeasure8 +
+            " " +
+            response.drinks[0].strIngredient8
         );
         $("#alcoholDisplay").append(ing8);
       }
@@ -160,7 +192,9 @@ $(document).ready(function () {
       } else {
         var ing9 = $("<ul>");
         ing9.text(
-          response.drinks[0].strMeasure9 + response.drinks[0].strIngredient9
+          response.drinks[0].strMeasure9 +
+            " " +
+            response.drinks[0].strIngredient9
         );
         $("#alcoholDisplay").append(ing9);
       }
@@ -172,7 +206,9 @@ $(document).ready(function () {
       } else {
         var ing10 = $("<ul>");
         ing10.text(
-          response.drinks[0].strMeasure10 + response.drinks[0].strIngredient10
+          response.drinks[0].strMeasure10 +
+            " " +
+            response.drinks[0].strIngredient10
         );
         $("#alcoholDisplay").append(ing10);
       }
@@ -184,7 +220,9 @@ $(document).ready(function () {
       } else {
         var ing11 = $("<ul>");
         ing11.text(
-          response.drinks[0].strMeasure11 + response.drinks[0].strIngredient11
+          response.drinks[0].strMeasure11 +
+            " " +
+            response.drinks[0].strIngredient11
         );
         $("#alcoholDisplay").append(ing11);
       }
@@ -196,7 +234,9 @@ $(document).ready(function () {
       } else {
         var ing12 = $("<ul>");
         ing12.text(
-          response.drinks[0].strMeasure12 + response.drinks[0].strIngredient12
+          response.drinks[0].strMeasure12 +
+            " " +
+            response.drinks[0].strIngredient12
         );
         $("#alcoholDisplay").append(ing12);
       }
@@ -208,7 +248,9 @@ $(document).ready(function () {
       } else {
         var ing13 = $("<ul>");
         ing13.text(
-          response.drinks[0].strMeasure13 + response.drinks[0].strIngredient13
+          response.drinks[0].strMeasure13 +
+            " " +
+            response.drinks[0].strIngredient13
         );
         $("#alcoholDisplay").append(ing13);
       }
@@ -220,7 +262,9 @@ $(document).ready(function () {
       } else {
         var ing14 = $("<ul>");
         ing14.text(
-          response.drinks[0].strMeasure14 + response.drinks[0].strIngredient14
+          response.drinks[0].strMeasure14 +
+            " " +
+            response.drinks[0].strIngredient14
         );
         $("#alcoholDisplay").append(ing14);
       }
@@ -232,35 +276,35 @@ $(document).ready(function () {
       } else {
         var ing15 = $("<ul>");
         ing15.text(
-          response.drinks[0].strMeasure15 + response.drinks[0].strIngredient15
+          response.drinks[0].strMeasure15 +
+            " " +
+            response.drinks[0].strIngredient15
         );
         $("#alcoholDisplay").append(ing15);
       }
-      //end of ingredients list
+      //------------------------------------------------------------------------------
 
-      //start of instructions
-
+      //Gets instructions
       var instructions = $("<p>");
       instructions.attr("id", "ins");
       instructions.text(response.drinks[0].strInstructions);
-      $("#alcoholDisplay").after(instructions);
+      $("#alcoholDisplay").append(instructions);
       console.log(instructions);
       console.log(response.drinks[0].strInstructions);
-      //end of instructions
 
-      //start of serving instructions
+      //--------------------------------------------------------------------------------------------
+      //Gets serving instructions
       var serve = $("<p>");
-      serve.text("Serve in a " + response.drinks[0].strGlass + ". Cheers!");
+      serve.text(
+        "Serve in a " +
+          response.drinks[0].strGlass +
+          ". Cheers!"
+      );
       $("#alcoholDisplay").append(serve);
       console.log(serve);
       console.log(response.drinks[0].strGlass);
-      //end of instructions
 
       //-----------------------------------------------------------------------------------------------------
-      var drinkRecipe = $("<div>");
-      drinkRecipe.addClass("recipe");
-      drinkRecipe.text(response.drinks[0].strIngredient2);
-      $("#alcoholDisplay").append(drinkRecipe);
     });
   });
 
