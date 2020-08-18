@@ -79,20 +79,30 @@ $(document).ready(function () {
       console.log(response.drinks[0].strDrinkThumb);
       //------------------------------------------------------------------------------------------------------
       //Gets ingredients list
+      //Ingredient 1
       var ing1 = $("<ul>");
-      ing1.text(
-        response.drinks[0].strMeasure1 +
-          " " +
-          response.drinks[0].strIngredient1
-      );
-      $("#alcoholDisplay").append(ing1);
-
+      if (response.drinks[0].strMeasure1 === null) {
+        ing1.text(response.drinks[0].strIngredient1);
+        $("#alcoholDisplay").append(ing1);
+      } else {
+        ing1.text(
+          response.drinks[0].strMeasure1 +
+            " " +
+            response.drinks[0].strIngredient1
+        );
+        $("#alcoholDisplay").append(ing1);
+      }
+      //------------------------------------------------------------------------------------------------------
+      //Ingredient 2
+      var ing2 = $("<ul>");
       if (
         response.drinks[0].strMeasure2 === null &&
         response.drinks[0].strIngredient2 === null
       ) {
+      } else if (response.drinks[0].strMeasure2 === null) {
+        ing2.text(response.drinks[0].strIngredient2);
+        $("#alcoholDisplay").append(ing2);
       } else {
-        var ing2 = $("<ul>");
         ing2.text(
           response.drinks[0].strMeasure2 +
             " " +
@@ -100,13 +110,17 @@ $(document).ready(function () {
         );
         $("#alcoholDisplay").append(ing2);
       }
-
+      //------------------------------------------------------------------------------------------------------
+      //Ingredient 3
+      var ing3 = $("<ul>");
       if (
         response.drinks[0].strMeasure3 === null &&
         response.drinks[0].strIngredient3 === null
       ) {
+      } else if (response.drinks[0].strMeasure3 === null) {
+        ing3.text(response.drinks[0].strIngredient3);
+        $("#alcoholDisplay").append(ing3);
       } else {
-        var ing3 = $("<ul>");
         ing3.text(
           response.drinks[0].strMeasure3 +
             " " +
@@ -114,13 +128,17 @@ $(document).ready(function () {
         );
         $("#alcoholDisplay").append(ing3);
       }
-
+      //------------------------------------------------------------------------------------------------------
+      //Ingredient 4
+      var ing4 = $("<ul>");
       if (
         response.drinks[0].strMeasure4 === null &&
         response.drinks[0].strIngredient4 === null
       ) {
+      } else if (response.drinks[0].strMeasure4 === null) {
+        ing4.text(response.drinks[0].strIngredient4);
+        $("#alcoholDisplay").append(ing4);
       } else {
-        var ing4 = $("<ul>");
         ing4.text(
           response.drinks[0].strMeasure4 +
             " " +
@@ -128,13 +146,17 @@ $(document).ready(function () {
         );
         $("#alcoholDisplay").append(ing4);
       }
-
+      //------------------------------------------------------------------------------------------------------
+      //Ingredient 5
+      var ing5 = $("<ul>");
       if (
         response.drinks[0].strMeasure5 === null &&
         response.drinks[0].strIngredient5 === null
       ) {
+      } else if (response.drinks[0].strMeasure5 === null) {
+        ing5.text(response.drinks[0].strIngredient5);
+        $("#alcoholDisplay").append(ing5);
       } else {
-        var ing5 = $("<ul>");
         ing5.text(
           response.drinks[0].strMeasure5 +
             " " +
@@ -142,13 +164,17 @@ $(document).ready(function () {
         );
         $("#alcoholDisplay").append(ing5);
       }
-
+      //------------------------------------------------------------------------------------------------------
+      //Ingredient 6
+      var ing6 = $("<ul>");
       if (
         response.drinks[0].strMeasure6 === null &&
         response.drinks[0].strIngredient6 === null
       ) {
+      } else if (response.drinks[0].strMeasure6 === null) {
+        ing6.text(response.drinks[0].strIngredient6);
+        $("#alcoholDisplay").append(ing6);
       } else {
-        var ing6 = $("<ul>");
         ing6.text(
           response.drinks[0].strMeasure6 +
             " " +
@@ -156,13 +182,17 @@ $(document).ready(function () {
         );
         $("#alcoholDisplay").append(ing6);
       }
-
+      //------------------------------------------------------------------------------------------------------
+      //Ingredient 7
+      var ing7 = $("<ul>");
       if (
         response.drinks[0].strMeasure7 === null &&
         response.drinks[0].strIngredient7 === null
       ) {
+      } else if (response.drinks[0].strMeasure7 === null) {
+        ing7.text(response.drinks[0].strIngredient7);
+        $("#alcoholDisplay").append(ing7);
       } else {
-        var ing7 = $("<ul>");
         ing7.text(
           response.drinks[0].strMeasure7 +
             " " +
@@ -170,13 +200,17 @@ $(document).ready(function () {
         );
         $("#alcoholDisplay").append(ing7);
       }
-
+      //------------------------------------------------------------------------------------------------------
+      //Ingredient 8
+      var ing8 = $("<ul>");
       if (
         response.drinks[0].strMeasure8 === null &&
         response.drinks[0].strIngredient8 === null
       ) {
+      } else if (response.drinks[0].strMeasure8 === null) {
+        ing8.text(response.drinks[0].strIngredient8);
+        $("#alcoholDisplay").append(ing8);
       } else {
-        var ing8 = $("<ul>");
         ing8.text(
           response.drinks[0].strMeasure8 +
             " " +
@@ -184,13 +218,17 @@ $(document).ready(function () {
         );
         $("#alcoholDisplay").append(ing8);
       }
-
+      //------------------------------------------------------------------------------------------------------
+      //Ingredient 9
+      var ing9 = $("<ul>");
       if (
         response.drinks[0].strMeasure9 === null &&
         response.drinks[0].strIngredient9 === null
       ) {
+      } else if (response.drinks[0].strMeasure9 === null) {
+        ing9.text(response.drinks[0].strIngredient9);
+        $("#alcoholDisplay").append(ing9);
       } else {
-        var ing9 = $("<ul>");
         ing9.text(
           response.drinks[0].strMeasure9 +
             " " +
@@ -198,13 +236,17 @@ $(document).ready(function () {
         );
         $("#alcoholDisplay").append(ing9);
       }
-
+      //------------------------------------------------------------------------------------------------------
+      //Ingredient 10
+      var ing10 = $("<ul>");
       if (
         response.drinks[0].strMeasure10 === null &&
         response.drinks[0].strIngredient10 === null
       ) {
+      } else if (response.drinks[0].strMeasure10 === null) {
+        ing10.text(response.drinks[0].strIngredient10);
+        $("#alcoholDisplay").append(ing10);
       } else {
-        var ing10 = $("<ul>");
         ing10.text(
           response.drinks[0].strMeasure10 +
             " " +
@@ -212,13 +254,17 @@ $(document).ready(function () {
         );
         $("#alcoholDisplay").append(ing10);
       }
-
+      //------------------------------------------------------------------------------------------------------
+      //Ingredient 11
+      var ing11 = $("<ul>");
       if (
         response.drinks[0].strMeasure11 === null &&
         response.drinks[0].strIngredient11 === null
       ) {
+      } else if (response.drinks[0].strMeasure11 === null) {
+        ing11.text(response.drinks[0].strIngredient11);
+        $("#alcoholDisplay").append(ing11);
       } else {
-        var ing11 = $("<ul>");
         ing11.text(
           response.drinks[0].strMeasure11 +
             " " +
@@ -226,13 +272,17 @@ $(document).ready(function () {
         );
         $("#alcoholDisplay").append(ing11);
       }
-
+      //------------------------------------------------------------------------------------------------------
+      //Ingredient 12
+      var ing12 = $("<ul>");
       if (
         response.drinks[0].strMeasure12 === null &&
         response.drinks[0].strIngredient12 === null
       ) {
+      } else if (response.drinks[0].strMeasure12 === null) {
+        ing12.text(response.drinks[0].strIngredient12);
+        $("#alcoholDisplay").append(ing12);
       } else {
-        var ing12 = $("<ul>");
         ing12.text(
           response.drinks[0].strMeasure12 +
             " " +
@@ -240,13 +290,17 @@ $(document).ready(function () {
         );
         $("#alcoholDisplay").append(ing12);
       }
-
+      //------------------------------------------------------------------------------------------------------
+      //Ingredient 13
+      var ing13 = $("<ul>");
       if (
         response.drinks[0].strMeasure13 === null &&
         response.drinks[0].strIngredient13 === null
       ) {
+      } else if (response.drinks[0].strMeasure13 === null) {
+        ing13.text(response.drinks[0].strIngredient13);
+        $("#alcoholDisplay").append(ing13);
       } else {
-        var ing13 = $("<ul>");
         ing13.text(
           response.drinks[0].strMeasure13 +
             " " +
@@ -254,13 +308,17 @@ $(document).ready(function () {
         );
         $("#alcoholDisplay").append(ing13);
       }
-
+      //------------------------------------------------------------------------------------------------------
+      //Ingredient 14
+      var ing14 = $("<ul>");
       if (
         response.drinks[0].strMeasure14 === null &&
         response.drinks[0].strIngredient14 === null
       ) {
+      } else if (response.drinks[0].strMeasure14 === null) {
+        ing14.text(response.drinks[0].strIngredient14);
+        $("#alcoholDisplay").append(ing14);
       } else {
-        var ing14 = $("<ul>");
         ing14.text(
           response.drinks[0].strMeasure14 +
             " " +
@@ -268,13 +326,17 @@ $(document).ready(function () {
         );
         $("#alcoholDisplay").append(ing14);
       }
-
+      //------------------------------------------------------------------------------------------------------
+      //Ingredient 15
+      var ing15 = $("<ul>");
       if (
         response.drinks[0].strMeasure15 === null &&
         response.drinks[0].strIngredient15 === null
       ) {
+      } else if (response.drinks[0].strMeasure15 === null) {
+        ing15.text(response.drinks[0].strIngredient15);
+        $("#alcoholDisplay").append(ing15);
       } else {
-        var ing15 = $("<ul>");
         ing15.text(
           response.drinks[0].strMeasure15 +
             " " +
