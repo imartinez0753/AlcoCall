@@ -1,112 +1,63 @@
-function signUp() {
-  //divs ===============================================================
-  var userName = $("<div>");
-  var password = $("<div>");
+function DOBuserInfo() {
   var DOB = $("<div>");
-  // Classes ===========================================================
-  password.addClass("form-group");
   DOB.addClass("form-group");
-  userName.addClass("form-group");
-  //labels =============================================================
-  var userNameLable = $("<lable>");
-  userNameLable.attr("for", "userName");
-  userNameLable.text("User Name");
-  //---------------
-  var passwordLable = $("<lable>");
-  passwordLable.attr("for", "password");
-  passwordLable.text("password");
-  //-------------------------------
   var DOBLable = $("<lable>");
   DOBLable.attr("for", "DOB");
   DOBLable.text("Date of birth");
-  //input ===============================================================
-  var userNameInput = $("<input>");
-  userNameInput.attr({ input: "userName", id: "userName" });
-  userNameInput.addClass("form-control");
-  //--------------------------------
-  var passwordInput = $("<input>");
-  passwordInput.attr({ type: "password", id: "password" });
-  passwordInput.addClass("form-control");
-  //--------------------------------
   var DOBInput = $("<input>");
   DOBInput.attr({ input: "date", id: "DOB" });
   DOBInput.addClass("form-control");
-  //=====================================================================
-  //button===============================================================
-  var submitBtn = $("<button>");
-  submitBtn.attr({ type: "submit", id: "submit" });
-  submitBtn.addClass("btn btn-primary");
-  submitBtn.text("Submit");
-  //=====================================================================
-  $("#form").empty();
-  $("#form").append(userName);
-  $("#form").append(userNameLable);
-  $("#form").append(userNameInput);
-  $("#form").append(password);
-  $("#form").append(passwordLable);
-  $("#form").append(passwordInput);
   $("#form").append(DOB);
   $("#form").append(DOBLable);
   $("#form").append(DOBInput);
-  $("#form").append(submitBtn);
 }
-function signIn() {
+function userNameInfo() {
   var userName = $("<div>");
-  var password = $("<div>");
-  var DOB = $("<div>");
-  // Classes ===========================================================
-  password.addClass("form-group");
-  DOB.addClass("form-group");
   userName.addClass("form-group");
-  //labels =============================================================
   var userNameLable = $("<lable>");
   userNameLable.attr("for", "userName");
   userNameLable.text("User Name");
-  //---------------
-  var passwordLable = $("<lable>");
-  passwordLable.attr("for", "password");
-  passwordLable.text("password");
-  //-------------------------------
-  var DOBLable = $("<lable>");
-  DOBLable.attr("for", "DOB");
-  DOBLable.text("Date of birth");
-  //input ===============================================================
   var userNameInput = $("<input>");
   userNameInput.attr({ input: "userName", id: "userName" });
   userNameInput.addClass("form-control");
-  //--------------------------------
-  var passwordInput = $("<input>");
-  passwordInput.attr({ type: "password", id: "password" });
-  passwordInput.addClass("form-control");
-  //--------------------------------
-  var DOBInput = $("<input>");
-  DOBInput.attr({ input: "date", id: "DOB" });
-  DOBInput.addClass("form-control");
-  //=====================================================================
-  //button===============================================================
+  $("#form").append(userName);
+  $("#form").append(userNameLable);
+  $("#form").append(userNameInput);
+}
+function submit() {
   var submitBtn = $("<button>");
   submitBtn.attr({ type: "submit", id: "submit" });
   submitBtn.addClass("btn btn-primary");
   submitBtn.text("Submit");
-  $("#form").empty();
-  $("#form").append(userName);
-  $("#form").append(userNameLable);
-  $("#form").append(userNameInput);
+  $("#form").append(submitBtn);
+}
+function passwordInfo() {
+  var password = $("<div>");
+  password.addClass("form-group");
+  var passwordLable = $("<lable>");
+  passwordLable.attr("for", "password");
+  passwordLable.text("password");
+  var passwordInput = $("<input>");
+  passwordInput.attr({ type: "password", id: "password" });
+  passwordInput.addClass("form-control");
   $("#form").append(password);
   $("#form").append(passwordLable);
   $("#form").append(passwordInput);
-  $("#form").append(submitBtn);
-  console.log("signIn");
 }
-
-//=====================================================================================================
 $(document).ready(function () {
   $(".dropdown-item").on("click", function () {
     if ($(this).text() === "sign up") {
       console.log("signUp");
-      signUp();
+      $("#form").empty();
+      userNameInfo();
+      passwordInfo();
+      DOBuserInfo();
+      submit();
     } else {
-      signIn();
+      $("#form").empty();
+      userNameInfo();
+      passwordInfo();
+      submit();
     }
   });
   $("#submit").on("click", function (event) {
