@@ -1,4 +1,8 @@
+//Dependencies
+
 var express = require("express");
+
+var passport = require("passport");
 
 var PORT = process.env.PORT || 8000;
 
@@ -10,6 +14,7 @@ app.use(express.static("public"));
 // Parse request body as JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(passport.initialize());
 
 // Import routes and give the server access to them.
 var routes = require("./controllers/controller.js");
