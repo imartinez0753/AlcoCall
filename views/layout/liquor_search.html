@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <title>Search by Liquor</title>
 
     <link
@@ -30,8 +33,13 @@
               />
             </a>
           </div>
-          <ul id="nav-mobile" class="right hide-on-sm-and-down">
-            <li><a href="liquor_search.html">Recipes</a></li>
+          <ul
+            id="nav-mobile"
+            class="right hide-on-sm-and-down"
+          >
+            <li>
+              <a href="liquor_search.html">Recipes</a>
+            </li>
             <li><a href="random.html">Random Drink</a></li>
             <li><a href="bars.html">Bars</a></li>
             <li><a href="beerSearch.html">Breweries</a></li>
@@ -54,43 +62,90 @@
 				src="images/bradley-dunn-fIZhuM3HlEU-unsplash.jpg"
 			  />
 			</a> -->
-                <button class="btn-flat black pulse drink-wrapper-buttons">
+                <button
+                  class="btn-flat black pulse drink-wrapper-buttons"
+                >
                   Vodka
                 </button>
               </div>
 
               <!-- Rum Button -->
               <div id="rumInput" class="col s12 m4 l4">
-                <button class="btn-flat black pulse drink-wrapper-buttons">
+                <button
+                  class="btn-flat black pulse drink-wrapper-buttons"
+                >
                   Rum
                 </button>
               </div>
 
               <!-- Tequila Button -->
               <div id="tequilaInput" class="col s12 m4 l4">
-                <button class="btn-flat black pulse drink-wrapper-buttons">
+                <button
+                  class="btn-flat black pulse drink-wrapper-buttons"
+                >
                   Tequila
                 </button>
               </div>
             </div>
             <div class="row">
               <div id="whiskeyInput" class="col s12 m4">
-                <button class="btn-flat black pulse drink-wrapper-buttons">
+                <button
+                  class="btn-flat black pulse drink-wrapper-buttons"
+                >
                   Whiskey
                 </button>
               </div>
               <div id="ginInput" class="col s12 m4 l4">
-                <button class="btn-flat black pulse drink-wrapper-buttons">
+                <button
+                  class="btn-flat black pulse drink-wrapper-buttons"
+                >
                   Gin
                 </button>
               </div>
-              <div id="Non_AlcoholicInput" class="col s12 m4 l4">
-                <button class="btn-flat black pulse drink-wrapper-buttons">
+              <div
+                id="Non_AlcoholicInput"
+                class="col s12 m4 l4"
+              >
+                <button
+                  class="btn-flat black pulse drink-wrapper-buttons"
+                >
                   Non-Alcohol
                 </button>
               </div>
             </div>
           </div>
+          <!--This is where the other ingredients will be listed-->
+          <div class="row container">
+            <div class="col s12 m4 l4">
+              <h5>Select an ingredient</h5>
+              <div class="row">
+                <form>
+                  <label for="drinkSelect"></label>
+                  <div id="addIng">
+                    <label id="label"></label>
+                    <select
+                      id="selectIng"
+                      class="browser-default"
+                    >
+                      <option value="" disabled selected
+                        >Choose your option</option
+                      ></select
+                    >
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="col s12 m8 l8 white">
+              <div>
+                <h5>
+                  Is there another ingredient you want to
+                  add? Select one from the dropdown on the
+                  left!
+                </h5>
+              </div>
+            </div>
+          </div>
+          <!--This is where the alcohol display and recipe population occurs-->
           <div class="row container">
             <div class="col s12 m4 l4">
               <h5>Select a drink</h5>
@@ -99,7 +154,10 @@
                   <label for="drinkSelect"></label>
                   <div id="alcoholInput">
                     <label id="label"></label>
-                    <select id="select" class="browser-default">
+                    <select
+                      id="select"
+                      class="browser-default"
+                    >
                       <option value="" disabled selected
                         >Choose your option</option
                       ></select
@@ -110,7 +168,9 @@
             </div>
             <div class="col s12 m8 l8 white">
               <div id="alcoholDisplay">
-                <h5>Pick a drink on the dropdown to the left!</h5>
+                <h5>
+                  Pick a drink on the dropdown to the left!
+                </h5>
               </div>
             </div>
           </div>
@@ -122,9 +182,14 @@
         <div class="container grey darken-4">
           <div class="row">
             <div class="col l6 m6 s12">
-              <h5 class="white-text left-align">AlcoCALL</h5>
-              <p class="grey-text text-lighten-4 left-align">
-                "The virtual bartender application that uses what you've got."
+              <h5 class="white-text left-align">
+                AlcoCALL
+              </h5>
+              <p
+                class="grey-text text-lighten-4 left-align"
+              >
+                "The virtual bartender application that uses
+                what you've got."
               </p>
             </div>
             <!-- <div class="col l4 offset-6 m6 s12">
@@ -140,8 +205,13 @@
         </div>
         <div class="footer-copyright grey darken-4">
           <div class="container grey darken-4 left">
-            © 2020, All rights reserved: AlcoCALL by The Coding Commanders
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            © 2020, All rights reserved: AlcoCALL by The
+            Coding Commanders
+            <a
+              class="grey-text text-lighten-4 right"
+              href="#!"
+              >More Links</a
+            >
           </div>
         </div>
       </footer>

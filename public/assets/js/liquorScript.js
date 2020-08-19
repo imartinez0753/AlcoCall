@@ -1,4 +1,24 @@
 $(document).ready(function () {
+  function ingCall() {
+    $.ajax({
+      url:
+        "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list",
+      method: "GET",
+    }).then(function (response) {
+      for (var j = 0; j < response.drinks.length; j++) {
+        console.log(
+          "Here are the ingredients: " +
+            response.drinks[j].strIngredient1
+        );
+        var addIngList = $("<option>");
+        addIngList.addClass("option");
+        addIngList.text(response.drinks[j].strIngredient1);
+        $("#selectIng").append(addIngList);
+      }
+    });
+  }
+  ingCall();
+  //Can I just pass 2 arguments into this function?
   function cocktailCall(liquor) {
     $.ajax({
       url:
