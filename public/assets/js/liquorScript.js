@@ -11,6 +11,10 @@ $(document).ready(function () {
             response.drinks[j].strIngredient1
         );
         var addIngList = $("<option>");
+        addIngList.attr(
+          "value",
+          response.drinks[j].strIngredient1
+        );
         addIngList.addClass("option");
         addIngList.text(response.drinks[j].strIngredient1);
         $("#selectIng").append(addIngList);
