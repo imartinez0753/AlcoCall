@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 var instance = M.Carousel.init({
-  fullWidth: true,
+  fullWidth: true
 });
 
 document.addEventListener("DOMContentLoaded", function () {
