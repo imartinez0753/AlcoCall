@@ -1,14 +1,12 @@
 $(document).ready(function () {
   function ingCall() {
     $.ajax({
-      url:
-        "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list",
-      method: "GET",
+      url: "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list",
+      method: "GET"
     }).then(function (response) {
       for (var j = 0; j < response.drinks.length; j++) {
         console.log(
-          "Here are the ingredients: " +
-            response.drinks[j].strIngredient1
+          "Here are the ingredients: " + response.drinks[j].strIngredient1
         );
         var addIngList = $("<option>");
         addIngList.addClass("option");
@@ -21,19 +19,14 @@ $(document).ready(function () {
   //Can I just pass 2 arguments into this function?
   function cocktailCall(liquor) {
     $.ajax({
-      url:
-        "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" +
-        liquor,
-      method: "GET",
+      url: "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + liquor,
+      method: "GET"
     }).then(function (response) {
       $("#" + liquor + "Input").on("click", function () {
         $("#select").empty();
         for (var i = 0; i < response.drinks.length; i++) {
           var drinkList = $("<option>");
-          drinkList.attr(
-            "value",
-            response.drinks[i].idDrink
-          );
+          drinkList.attr("value", response.drinks[i].idDrink);
           drinkList.addClass("option");
           drinkList.text(response.drinks[i].strDrink);
           // console.log(response.drinks[i].strDrink);
@@ -52,7 +45,7 @@ $(document).ready(function () {
   $.ajax({
     url:
       "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic",
-    method: "GET",
+    method: "GET"
   }).then(function (response) {
     $("#Non_AlcoholicInput").on("click", function () {
       $("#select").empty();
@@ -75,9 +68,8 @@ $(document).ready(function () {
 
     $.ajax({
       url:
-        "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" +
-        drinkNum,
-      method: "GET",
+        "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + drinkNum,
+      method: "GET"
     }).then(function (response) {
       console.log(response);
       //-----------------------------------------------------------------------------------------------------
@@ -91,10 +83,7 @@ $(document).ready(function () {
 
       //Gets drink image
       var drinkImg = $("<img>");
-      drinkImg.attr(
-        "src",
-        response.drinks[0].strDrinkThumb + "/preview"
-      );
+      drinkImg.attr("src", response.drinks[0].strDrinkThumb + "/preview");
       $("#drinkName").after(drinkImg);
       console.log(response.drinks[0].strDrinkThumb);
       //------------------------------------------------------------------------------------------------------
@@ -377,11 +366,7 @@ $(document).ready(function () {
       //--------------------------------------------------------------------------------------------
       //Gets serving instructions
       var serve = $("<p>");
-      serve.text(
-        "Serve in a " +
-          response.drinks[0].strGlass +
-          ". Cheers!"
-      );
+      serve.text("Serve in a " + response.drinks[0].strGlass + ". Cheers!");
       $("#alcoholDisplay").append(serve);
       console.log(serve);
       console.log(response.drinks[0].strGlass);
