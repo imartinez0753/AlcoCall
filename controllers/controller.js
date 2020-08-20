@@ -12,7 +12,7 @@ router.get("/", function (req, res) {
       userInfo: data
     };
     console.log(object);
-    res.sendFile(path.join(__dirname + "/../views/layout/", "index.html"));
+    res.sendFile(path.join(__dirname + "/../views/layout/", "signIn.html"));
     // res.render("index", object);
   });
 });

@@ -5,7 +5,7 @@ function DOBuserInfo() {
   DOBLable.attr("for", "DOB");
   DOBLable.text("Date of birth");
   var DOBInput = $("<input>");
-  DOBInput.attr({ input: "date", id: "DOB" });
+  DOBInput.attr({ type: "date", id: "DOB" });
   DOBInput.addClass("form-control");
   $("#form").append(DOB);
   $("#form").append(DOBLable);
@@ -26,7 +26,7 @@ function userNameInfo() {
 }
 function submit() {
   var submitBtn = $("<button>");
-  submitBtn.attr({ type: "submit", id: "submit" });
+  submitBtn.attr("id", "submit");
   submitBtn.addClass("btn btn-primary");
   submitBtn.text("Submit");
   $("#form").append(submitBtn);
@@ -54,6 +54,7 @@ $(document).ready(function () {
       DOBuserInfo();
       submit();
     } else {
+      console.log("signIn");
       $("#form").empty();
       userNameInfo();
       passwordInfo();
@@ -64,7 +65,7 @@ $(document).ready(function () {
     console.log("submit");
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
-    console.log(moment($("#DOB").val().trim(), "YYYY-MM-DD", true).isValid());
+    // console.log(moment($("#DOB").val().trim(), "YYYY-MM-DD", true).isValid());
     console.log($("#DOB").val().trim());
     var ageCheck = moment().diff($("#DOB").val().trim(), "years");
     var newUserName = {

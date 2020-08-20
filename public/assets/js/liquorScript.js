@@ -60,7 +60,7 @@ $(document).ready(function () {
     });
   });
   //-----------------------------------------------------------------------------------------
-  $("select").on("change", function () {
+  $("#select").on("change", function () {
     // alert("hit");
     $("#alcoholDisplay").empty();
     drinkNum = $(this).val();

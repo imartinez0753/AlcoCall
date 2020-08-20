@@ -17,10 +17,10 @@
     />
 
     <!-- Google Fonts -->
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Font+Kanit"
-    />
+    /> -->
 
     <!-- Custom CSS -->
     <link href="/assets/css/style.css" rel="stylesheet" />
@@ -76,39 +76,14 @@
     <!--Start of main content-->
     <main class="container">
       <h1>Sign In/up</h1>
-      <div class="dropdown">
-        <button
-          class="btn btn-secondary dropdown-toggle"
-          type="button"
-          id="dropdownMenuButton"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          Sign In/Up
-        </button>
+      
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" href="#">sign in</a>
           <a class="dropdown-item" href="#">sign up</a>
         </div>
       </div>
-      <form>
-        <div class="form-group">
-          <label for="userName">User Name</label>
-          <input type="userName" class="form-control" id="userName" />
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="password" />
-        </div>
-        <div class="form-group">
-          <label for="DOB">Date of birth example: yyyy-mm-dd</label>
-          <input type="DOB" class="form-control" id="DOB" />
-        </div>
-        <button id="submit" type="submit" class="btn btn-primary">
-          Submit
-        </button>
-      </form>
+      <form id="form"></form>
+    </br>
     </main>
     <!--End of main content-->
 
