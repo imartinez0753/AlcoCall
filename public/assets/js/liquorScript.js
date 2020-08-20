@@ -6,15 +6,11 @@ $(document).ready(function () {
       method: "GET",
     }).then(function (response) {
       for (var j = 0; j < response.drinks.length; j++) {
-        console.log(
-          "Here are the ingredients: " +
-            response.drinks[j].strIngredient1
-        );
+        // console.log(
+        //   "Here are the ingredients: " +
+        //     response.drinks[j].strIngredient1
+        // );
         var addIngList = $("<option>");
-        addIngList.attr(
-          "value",
-          response.drinks[j].strIngredient1
-        );
         addIngList.addClass("option");
         addIngList.text(response.drinks[j].strIngredient1);
         $("#selectIng").append(addIngList);
@@ -22,7 +18,7 @@ $(document).ready(function () {
     });
   }
   ingCall();
-  //Can I just pass 2 arguments into this function?
+  //---------------------------------------------------------------------------------------------------
   function cocktailCall(liquor) {
     $.ajax({
       url:
@@ -52,7 +48,44 @@ $(document).ready(function () {
   cocktailCall("gin");
   cocktailCall("rum");
   cocktailCall("tequila");
-  // //-----------------------------------------------------------------------------------------
+  //---------------------------------------------------------------------------------------------------
+  $("#selectIng").on("change", function moreIng(
+    liquor,
+    ingSpec
+  ) {
+    $("#selectIng").empty();
+    ingSpec = $(this).val();
+    console.log(ingSpec);
+    $.ajax({
+      url:
+        "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=" +
+        liquor +
+        "," +
+        ingSpec,
+      method: "GET",
+    }).then(function (response) {
+      $("#" + liquor + "Input").on("click", function () {
+        $("#select").empty();
+        for (
+          var k = 0;
+          k < response.drinks[k].length;
+          k++
+        ) {
+          var drinkList = $("<option>");
+          drinkList.attr(
+            "value",
+            response.drinks[k].idDrink
+          );
+          drinkList.addClass("option");
+          drinkList.text(response.drinks[k].strDrink);
+          $("#select").append(drinkList);
+        }
+        moreIng();
+      });
+    });
+  });
+
+  //----------------------------------------------------------------
   $.ajax({
     url:
       "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic",
