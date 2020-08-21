@@ -1,5 +1,10 @@
 // var orm = require("../../config/orm.js");
-// const bcrypt = require("bcryptjs");
+// import bcrypt from "bcryptjs";
+// bcrypt.hash("my password", "my salt", (err, hash) => {
+//   // Store hash password in DB
+// });
+// const hash = bcrypt.hashSync('my password', 'my salt');
+const bcrypt = require("bcryptjs");
 
 function DOBuserInfo() {
   var DOB = $("<div>");
@@ -88,6 +93,10 @@ function signUp() {
         if (moment().diff($("#DOB").val().trim(), "years") < 21) {
           return alert("sorry you're too young to enjoy booze!");
         } else {
+          //========================================================================
+
+          //========================================================================
+
           // console.log("logged in as " + " " + $("#userName").val().trim());
           $.ajax("/api/userInfo", {
             type: "POST",
@@ -96,13 +105,13 @@ function signUp() {
             console.log("success");
           });
           //hash
-          // bcrypt.genSalt(10, (err, salt) =>
-          //   bcrypt.hash(newUserName.password, salt, (err, hash) => {
-          //     if (err) throw err;
-          //     //set password to hash
-          //     newUserName.password = hash;
-          //   })
-          // );
+          bcrypt.genSalt(10, (err, salt) =>
+            bcrypt.hash(newUserName.password, salt, (err, hash) => {
+              if (err) throw err;
+              //set password to hash
+              newUserName.password = hash;
+            })
+          );
           alert("created an account, please sign in.");
           signIn();
         }

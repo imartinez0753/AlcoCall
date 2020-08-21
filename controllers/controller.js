@@ -1,5 +1,6 @@
 var express = require("express");
 var path = require("path");
+var bcrypt = require("bcryptjs");
 
 var router = express.Router();
 
