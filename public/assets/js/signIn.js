@@ -1,4 +1,6 @@
 // var orm = require("../../config/orm.js");
+// const bcrypt = require("bcryptjs");
+
 function DOBuserInfo() {
   var DOB = $("<div>");
   DOB.addClass("form-group");
@@ -93,6 +95,14 @@ function signUp() {
           }).then(function () {
             console.log("success");
           });
+          //hash
+          // bcrypt.genSalt(10, (err, salt) =>
+          //   bcrypt.hash(newUserName.password, salt, (err, hash) => {
+          //     if (err) throw err;
+          //     //set password to hash
+          //     newUserName.password = hash;
+          //   })
+          // );
           alert("created an account, please sign in.");
           signIn();
         }
