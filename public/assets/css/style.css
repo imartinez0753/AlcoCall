@@ -3,7 +3,7 @@
 .body {
   margin: 0;
   padding: 0;
-  font-family: "BenchNine, sans-serif";
+  font-family: BenchNine, sans-serif;
 }
 
 .nav-bar {
@@ -11,6 +11,10 @@
   padding-top: px;
   font-family: BenchNine, serif;
   font-size: larger;
+}
+
+.main-content {
+  margin-top: 30px;
 }
 
 .wide-container {
@@ -24,12 +28,31 @@
   width: 100%;
 }
 
+a {
+  font-family: BenchNine, serif;
+  color: white;
+  font-size: large;
+}
+
+.footer-a {
+  font-family: BenchNine, serif;
+  color: white;
+}
+
+.btn:hover {
+  color: rgb(75, 75, 75);
+}
+
+a:hover {
+  color: #039be5;
+}
+
 .iframe-container {
   position: relative;
   overflow: hidden;
   width: 100%;
   padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
-  margin-top: 10px;
+  margin-top: 40px;
 }
 
 /* Then style the iframe to fit in the container div with full height and width */
@@ -74,18 +97,18 @@
 }
 
 p {
-  font-family: "BenchNine", sans-serif;
+  font-family: BenchNine, sans-serif;
   font-size: large;
   color: rgb(75, 75, 75);
 }
 
 h1 {
-  font-family: "BenchNine, sans-serif"
+  font-family: BenchNine, sans-serif;
   font-size: large;
 }
 
 h5 {
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: BenchNine, sans-serif;
   color: dimgray;
   font-weight: bold;
 }
@@ -125,7 +148,8 @@ h5 {
 }
 
 .footer-copyright {
-  font-size: x-small;
+  font-size: small;
+  color: #039be5;
 }
 
 /* .carousel {
