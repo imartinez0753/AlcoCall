@@ -52,89 +52,97 @@ function passwordInfo() {
   $("#form").append(passwordLable);
   $("#form").append(passwordInput);
 }
+function signUp() {
+  $("#form").empty();
+  userNameInfo();
+  passwordInfo();
+  DOBuserInfo();
+  submit();
+  $("body").on("click", function (event) {
+    if (event.target.matches("#submit")) {
+      event.preventDefault();
+      console.log("submit");
+      var newUserName = {
+        userName: $("#userName").val().trim(),
+        DOB: $("#DOB").val().trim(),
+        password: $("#password").val().trim()
+      };
+
+      $.get("/api", function (data) {
+        // console.log(data[0].userName);
+        for (i = 0; i < data.length; i++) {
+          if (data[i].userName === $("#userName").val().trim()) {
+            return alert("That username is already in use");
+          }
+        }
+
+        if (
+          newUserName.userName === "" ||
+          newUserName.DOB === "" ||
+          newUserName.password === ""
+        ) {
+          return alert("all fields must be filled out");
+        }
+        if (moment().diff($("#DOB").val().trim(), "years") < 21) {
+          return alert("sorry you're too young to enjoy booze!");
+        } else {
+          // console.log("logged in as " + " " + $("#userName").val().trim());
+          $.ajax("/api/userInfo", {
+            type: "POST",
+            data: newUserName
+          }).then(function () {
+            console.log("success");
+          });
+          alert("created an account, please sign in.");
+          signIn();
+        }
+      });
+    }
+  });
+}
+function signIn() {
+  $("#form").empty();
+  userNameInfo();
+  passwordInfo();
+  submit2();
+  $("body").on("click", function (event) {
+    if (event.target.matches("#submit2")) {
+      event.preventDefault();
+      console.log("submit");
+      var newUserName = {
+        userName: $("#userName").val().trim(),
+        password: $("#password").val().trim()
+      };
+
+      $.get("/api", function (data) {
+        if (newUserName.userName === "" || newUserName.password === "") {
+          return alert("all fields must be filled out");
+        }
+        // console.log(data[0].userName);
+        for (i = 0; i < data.length; i++) {
+          if (
+            data[i].userName === $("#userName").val().trim() &&
+            data[i].password !== $("#password").val().trim()
+          ) {
+            alert("incorrect username and password combination");
+          } else {
+            //render new html
+
+            window.location.replace("index.html");
+          }
+        }
+      });
+    }
+  });
+}
 $(document).ready(function () {
   $(".dropdown-item").on("click", function () {
     if ($(this).text() === "sign up") {
+      signUp();
       console.log("signUp");
-      $("#form").empty();
-      userNameInfo();
-      passwordInfo();
-      DOBuserInfo();
-      submit();
-      $("body").on("click", function (event) {
-        if (event.target.matches("#submit")) {
-          event.preventDefault();
-          console.log("submit");
-          var newUserName = {
-            userName: $("#userName").val().trim(),
-            DOB: $("#DOB").val().trim(),
-            password: $("#password").val().trim()
-          };
-
-          $.get("/api", function (data) {
-            // console.log(data[0].userName);
-            for (i = 0; i < data.length; i++) {
-              if (data[i].userName === $("#userName").val().trim()) {
-                return alert("That username is already in use");
-              }
-            }
-
-            if (
-              newUserName.userName === "" ||
-              newUserName.DOB === "" ||
-              newUserName.password === ""
-            ) {
-              return alert("all fields must be filled out");
-            }
-            if (moment().diff($("#DOB").val().trim(), "years") < 21) {
-              return alert("sorry you're too young to enjoy booze!");
-            } else {
-              // console.log("logged in as " + " " + $("#userName").val().trim());
-              $.ajax("/api/userInfo", {
-                type: "POST",
-                data: newUserName
-              }).then(function () {
-                console.log(
-                  "logged in as " + " " + $("#userName").val().trim()
-                );
-              });
-            }
-          });
-        }
-      });
     } else {
       console.log("signIn");
-      $("#form").empty();
-      userNameInfo();
-      passwordInfo();
-      submit2();
-      $("body").on("click", function (event) {
-        if (event.target.matches("#submit2")) {
-          event.preventDefault();
-          console.log("submit");
-          var newUserName = {
-            userName: $("#userName").val().trim(),
-            password: $("#password").val().trim()
-          };
-
-          $.get("/api", function (data) {
-            if (newUserName.userName === "" || newUserName.password === "") {
-              return alert("all fields must be filled out");
-            }
-            // console.log(data[0].userName);
-            for (i = 0; i < data.length; i++) {
-              if (
-                data[i].userName === $("#userName").val().trim() &&
-                data[i].password !== $("#password").val().trim()
-              ) {
-                alert("incorrect username and password combination");
-              } else {
-                //render new html
-              }
-            }
-          });
-        }
-      });
+      signIn();
     }
   });
 });
