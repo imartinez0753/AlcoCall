@@ -2,8 +2,6 @@
 
 var express = require("express");
 
-var passport = require("passport");
-
 var PORT = process.env.PORT || 8000;
 
 var app = express();
