@@ -1,3 +1,4 @@
+// var orm = require("../../config/orm.js");
 function DOBuserInfo() {
   var DOB = $("<div>");
   DOB.addClass("form-group");
@@ -26,7 +27,14 @@ function userNameInfo() {
 }
 function submit() {
   var submitBtn = $("<button>");
-  submitBtn.attr("id", "submit");
+  submitBtn.attr({ type: "submit", id: "submit" });
+  submitBtn.addClass("btn btn-primary");
+  submitBtn.text("Submit");
+  $("#form").append(submitBtn);
+}
+function submit2() {
+  var submitBtn = $("<button>");
+  submitBtn.attr({ type: "submit", id: "submit2" });
   submitBtn.addClass("btn btn-primary");
   submitBtn.text("Submit");
   $("#form").append(submitBtn);
@@ -53,35 +61,80 @@ $(document).ready(function () {
       passwordInfo();
       DOBuserInfo();
       submit();
+      $("body").on("click", function (event) {
+        if (event.target.matches("#submit")) {
+          event.preventDefault();
+          console.log("submit");
+          var newUserName = {
+            userName: $("#userName").val().trim(),
+            DOB: $("#DOB").val().trim(),
+            password: $("#password").val().trim()
+          };
+
+          $.get("/api", function (data) {
+            // console.log(data[0].userName);
+            for (i = 0; i < data.length; i++) {
+              if (data[i].userName === $("#userName").val().trim()) {
+                return alert("That username is already in use");
+              }
+            }
+
+            if (
+              newUserName.userName === "" ||
+              newUserName.DOB === "" ||
+              newUserName.password === ""
+            ) {
+              return alert("all fields must be filled out");
+            }
+            if (moment().diff($("#DOB").val().trim(), "years") < 21) {
+              return alert("sorry you're too young to enjoy booze!");
+            } else {
+              // console.log("logged in as " + " " + $("#userName").val().trim());
+              $.ajax("/api/userInfo", {
+                type: "POST",
+                data: newUserName
+              }).then(function () {
+                console.log(
+                  "logged in as " + " " + $("#userName").val().trim()
+                );
+              });
+            }
+          });
+        }
+      });
     } else {
       console.log("signIn");
       $("#form").empty();
       userNameInfo();
       passwordInfo();
-      submit();
+      submit2();
+      $("body").on("click", function (event) {
+        if (event.target.matches("#submit2")) {
+          event.preventDefault();
+          console.log("submit");
+          var newUserName = {
+            userName: $("#userName").val().trim(),
+            password: $("#password").val().trim()
+          };
+
+          $.get("/api", function (data) {
+            if (newUserName.userName === "" || newUserName.password === "") {
+              return alert("all fields must be filled out");
+            }
+            // console.log(data[0].userName);
+            for (i = 0; i < data.length; i++) {
+              if (
+                data[i].userName === $("#userName").val().trim() &&
+                data[i].password !== $("#password").val().trim()
+              ) {
+                alert("incorrect username and password combination");
+              } else {
+                //render new html
+              }
+            }
+          });
+        }
+      });
     }
-  });
-  $("#submit").on("click", function (event) {
-    console.log("submit");
-    // Make sure to preventDefault on a submit event.
-    event.preventDefault();
-    // console.log(moment($("#DOB").val().trim(), "YYYY-MM-DD", true).isValid());
-    console.log($("#DOB").val().trim());
-    var ageCheck = moment().diff($("#DOB").val().trim(), "years");
-    var newUserName = {
-      userName: $("#userName").val().trim(),
-      DOB: $("#DOB").val().trim(),
-      password: $("#password").val().trim()
-    };
-    //===================================================
-    console.log("logged in as " + " " + $("#userName").val().trim());
-    $.ajax("/api/userInfo", {
-      type: "POST",
-      data: newUserName
-    }).then(function () {
-      console.log("logged in as " + " " + $("#userName").val().trim());
-      console.log(moment($("#DOB").val().trim(), "YYYYMMDD").fromNow());
-      console.log(moment().diff($("#DOB").val().trim(), "years"));
-    });
   });
 });

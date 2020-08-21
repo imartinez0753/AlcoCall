@@ -6,15 +6,18 @@ var router = express.Router();
 var userInfo = require("../models/userInfo.js");
 
 // Create all our routes and set up logic within those routes where required.
-router.get("/", function (req, res) {
-  userInfo.all(function (data) {
-    var object = {
-      userInfo: data
-    };
-    console.log(object);
-    res.sendFile(path.join(__dirname + "/../views/layout/", "signIn.html"));
-    // res.render("index", object);
+router.get("/api", function (req, res) {
+  userInfo.all(function (result) {
+    console.log(result);
+    // console.log(res);
+    // console.log(res.json({ id: result.userName }));
+    res.json(result);
   });
+});
+
+router.get("/", function (req, res) {
+  res.sendFile(path.join(__dirname + "/../views/layout/", "signIn.html"));
+  // res.render("index", object);
 });
 
 router.get("/liquor_search.html", function (req, res) {
@@ -57,7 +60,7 @@ router.post("/api/userInfo", function (req, res) {
     [req.body.userName, req.body.DOB, req.body.password],
     function (result) {
       // Send back the ID of the new quote
-      res.json({ id: result.insertId });
+      res.json({ id: result.userName });
     }
   );
 });

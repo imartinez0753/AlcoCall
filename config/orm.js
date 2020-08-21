@@ -29,9 +29,19 @@ var orm = {
       if (err) {
         throw err;
       }
+      console.log(result);
       cb(result);
     });
   },
+  // search: function (tableInput, condition, cb) {
+  //   var queryString = "SELECT " + condition + " FROM " + tableInput + ";";
+  //   connection.query(queryString, function (err, result) {
+  //     if (err) {
+  //       throw err;
+  //     }
+  //     cb(result);
+  //   });
+  // },
   create: function (table, cols, vals, cb) {
     var queryString = "INSERT INTO " + table;
 
