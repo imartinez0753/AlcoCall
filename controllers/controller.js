@@ -1,17 +1,14 @@
 var express = require("express");
 var path = require("path");
-var bcrypt = require("bcryptjs");
 
 var router = express.Router();
 
 var userInfo = require("../models/userInfo.js");
+const bcrypt = require("bcryptjs");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/api", function (req, res) {
   userInfo.all(function (result) {
-    console.log(result);
-    // console.log(res);
-    // console.log(res.json({ id: result.userName }));
     res.json(result);
   });
 });
@@ -56,14 +53,15 @@ router.get("/signIn.html", function (req, res) {
 
 router.post("/api/userInfo", function (req, res) {
   // console.log(req.body);
-  userInfo.create(
-    ["userName", "DOB", "password"],
-    [req.body.userName, req.body.DOB, req.body.password],
-    function (result) {
-      // Send back the ID of the new quote
-      res.json({ id: result.userName });
-    }
-  );
+  bcrypt.hash(req.body.password, 10).then((hash) => {
+    userInfo.create(
+      ["userName", "DOB", "password"],
+      [req.body.userName, req.body.DOB, hash],
+      function (result) {
+        res.json(result);
+      }
+    );
+  });
 });
 
 module.exports = router;
