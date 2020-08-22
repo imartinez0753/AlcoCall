@@ -9,11 +9,7 @@ if (process.env.JAWSDB_URL) {
     host: "localhost",
     port: 3306,
     user: "root",
-<<<<<<< HEAD
-    password: "Phoenix11!",
-=======
     password: ")F*WGUsVpV",
->>>>>>> 68439bcb16d1bbb83f8104f09dba314a138135de
     database: "userInfo_db",
   });
 }
