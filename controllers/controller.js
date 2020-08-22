@@ -58,7 +58,7 @@ router.get("/beerSearch", function (req, res) {
   res.sendFile(
     path.join(
       __dirname + "/../views/layout/",
-      "beersearch.html"
+      "beerSearch.html"
     )
   );
 });
