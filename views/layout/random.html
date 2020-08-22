@@ -28,17 +28,18 @@
     <!-- Custom CSS -->
     <link href="/assets/css/style.css" rel="stylesheet" />
 
-    <!-- Page Title -->
-    <title>The Alcocall App</title>
+    <title>Alcocall Random Drink</title>
   </head>
   <body>
     <!-- Navigation Bar -->
-    <nav class="nav-wrapper black darken-1 z-depth-2">
+    <nav
+      class="nav-wrapper black darken-1 z-depth-2 nav-bar"
+    >
       <div class="container">
-        <a href="index.html" class="">
+        <a href="index" class="">
           <img
             class="brand-logo"
-            src="/assets/images/alcocall_logo.png"
+            src="/assets/images/alcocall_logo-blue_sm.png"
             alt="Alcocall Logo"
           />
         </a>
@@ -49,14 +50,21 @@
         >
           <i class="material-icons">menu</i>
         </a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="liquor_search.html">Recipes</a></li>
-          <li><a href="random.html">Random Drink</a></li>
-          <li><a href="bars.html">Bars</a></li>
-          <li><a href="beerSearch.html">Breweries</a></li>
+        <ul
+          class="right hide-on-med-and-down"
+          style="font-family: BenchNine, sans-serif;"
+        >
+          <li>
+            <a href="liquor_search" class="btn:hover"
+              >Recipes</a
+            >
+          </li>
+          <li><a href="random">Random Drink</a></li>
+          <li><a href="bars">Bars</a></li>
+          <li><a href="beerSearch">Breweries</a></li>
           <li>
             <a
-              href="signIn.html"
+              href="signIn"
               class="btn-floating light-blue darken-1 zed-depth-0"
               alt="Login"
             >
@@ -69,56 +77,29 @@
     </nav>
 
     <ul class="sidenav white darken-2" id="mobile-links">
-      <li>
-        <a
-          class="grey-text text-lighten-3"
-          href="index.html"
-          >Home</a
-        >
-      </li>
-      <li>
-        <a class="grey-text text-lighten-3" href="recipies"
-          >Recipes</a
-        >
-      </li>
-      <li>
-        <a class="grey-text text-lighten-3" href="bars.html"
-          >Bars</a
-        >
-      </li>
-      <li>
-        <a
-          class="grey-text text-lighten-3"
-          href="beerSearch.html"
-          >Breweries</a
-        >
-      </li>
-      <li>
-        <a
-          class="grey-text text-lighten-3"
-          href="AlcoholReferences.html"
-          >Resources</a
-        >
-      </li>
-      <li>
-        <a
-          class="grey-text text-lighten-3"
-          href="signIn.html"
-          >Login</a
-        >
-      </li>
+      <li><a href="index">Home</a></li>
+      <li><a href="liquor_search">Recipes</a></li>
+      <li><a href="bars">Bars</a></li>
+      <li><a href="beerSearch">Breweries</a></li>
+      <li><a href="login">Login</a></li>
     </ul>
-
     <!-- End of navigation bar and side bar -->
 
     <!--Start of main content-->
-    <main class="container">
+    <main class="container main-content">
       <div class="container" id="random">
         <ul id="ingList">
-          <h5>Ingredients:</h5>
+          <h5 class="light-blue-text text-darken-1">
+            Ingredients:
+          </h5>
           <!--This is where the ingredients fill-->
         </ul>
-        <h5 id="insTitle">Instructions:</h5>
+        <h5
+          id="insTitle"
+          class="light-blue-text text-darken-1"
+        >
+          Instructions:
+        </h5>
         <!--This is where the instructions fill-->
       </div>
     </main>
@@ -131,51 +112,51 @@
       <div class="container">
         <div class="row">
           <div class="col l6 s12">
-            <h5 class="white-text">The Alcocall App</h5>
+            <h5 class="light-blue-text text-darken-1">
+              The Alcocall App
+            </h5>
             <p class="grey-text text-lighten-4">
-              You can use rows and columns here to organize
-              your footer content.
+              Your virtual bartender
             </p>
           </div>
           <div class="col l4 offset-l2 s12">
-            <h5 class="white-text">Links</h5>
+            <h5 class="light-blue-text text-darken-1">
+              Links
+            </h5>
             <ul>
               <li>
-                <a
-                  class="grey-text text-lighten-3"
-                  href="index.html"
-                  >Home</a
-                >
+                <a class="footer-a" href="index">Home</a>
               </li>
               <li>
-                <a
-                  class="grey-text text-lighten-3"
-                  href="recipies"
+                <a class="footer-a" href="liquor_search"
                   >Recipes</a
                 >
               </li>
               <li>
-                <a class="grey-text text-lighten-3" href="#"
-                  >Bars</a
-                >
+                <a class="footer-a" href="bars">Bars</a>
               </li>
               <li>
-                <a class="grey-text text-lighten-3" href="#"
+                <a class="footer-a" href="beerSearch"
                   >Breweries</a
                 >
               </li>
               <li>
-                <a class="grey-text text-lighten-3" href="#"
-                  >Login</a
+                <a class="footer-a" href="AlcoholReferences"
+                  >Resources</a
                 >
+              </li>
+              <li>
+                <a class="footer-a" href="signIn">Login</a>
               </li>
             </ul>
           </div>
         </div>
       </div>
-      <div class="footer-copyright">
+      <div>
         <div class="container">
-          <p>
+          <p
+            class="footer-copyright grey-text text-darken-2"
+          >
             ©2020, All rights reserved: Alcocall app by The
             Coding Commanders
           </p>

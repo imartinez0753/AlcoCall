@@ -6,8 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Search by Liquor</title>
-
+    <!-- Compiled and minified CSS -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
@@ -26,10 +25,10 @@
       href="https://fonts.googleapis.com/css?family=BenchNine"
     />
 
-    <!--Custom CSS -->
+    <!-- Custom CSS -->
     <link href="/assets/css/style.css" rel="stylesheet" />
 
-    <title>Liquor Recipes</title>
+    <title>Alcocall Recipes</title>
   </head>
   <body>
     <!-- Navigation Bar -->
@@ -37,10 +36,10 @@
       class="nav-wrapper black darken-1 z-depth-2 nav-bar"
     >
       <div class="container">
-        <a href="index.html" class="">
+        <a href="index" class="">
           <img
             class="brand-logo"
-            src="/assets/images/alcocall_logo.png"
+            src="/assets/images/alcocall_logo-blue_sm.png"
             alt="Alcocall Logo"
           />
         </a>
@@ -55,13 +54,17 @@
           class="right hide-on-med-and-down"
           style="font-family: BenchNine, sans-serif;"
         >
-          <li><a href="liquor_search.html">Recipes</a></li>
-          <li><a href="random.html">Random Drink</a></li>
-          <li><a href="/bars.html">Bars</a></li>
-          <li><a href="beerSearch.html">Breweries</a></li>
+          <li>
+            <a href="liquor_search" class="btn:hover"
+              >Recipes</a
+            >
+          </li>
+          <li><a href="random">Random Drink</a></li>
+          <li><a href="bars">Bars</a></li>
+          <li><a href="beerSearch">Breweries</a></li>
           <li>
             <a
-              href="signIn.html"
+              href="signIn"
               class="btn-floating light-blue darken-1 zed-depth-0"
               alt="Login"
             >
@@ -74,30 +77,32 @@
     </nav>
 
     <ul class="sidenav white darken-2" id="mobile-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="liquor_search.html">Recipes</a></li>
-      <li><a href="bars.html">Bars</a></li>
-      <li><a href="beerSearch.html">Breweries</a></li>
-      <li><a href="login.html">Login</a></li>
+      <li><a href="index">Home</a></li>
+      <li><a href="liquor_search">Recipes</a></li>
+      <li><a href="bars">Bars</a></li>
+      <li><a href="beerSearch">Breweries</a></li>
+      <li><a href="login">Login</a></li>
     </ul>
     <!-- End of navigation bar and side bar -->
 
     <!--Start of main content-->
-    <main class="container">
+    <main class="container main-content">
       <div class="row">
         <div class="row container">
-          <h5>Select a Spirit!</h5>
+          <h5 class="light-blue-text text-darken-1">
+            Select a Spirit!
+          </h5>
           <div class="row drink-wrapper">
             <div id="vodkaInput" class="col s4 m4 l4">
               <!-- <a href="">
-                <img
-                  class="drink-wrapper-images"
-                  width="150"
-                  src="images/bradley-dunn-fIZhuM3HlEU-unsplash.jpg"
-                />
-              </a> -->
+      <img
+      class="drink-wrapper-images"
+      width="150"
+      src="images/bradley-dunn-fIZhuM3HlEU-unsplash.jpg"
+      />
+    </a> -->
               <button
-                class="btn-flat black pulse drink-wrapper-buttons"
+                class="btn light-blue darken-1 btn:hover pulse drink-wrapper-buttons"
               >
                 Vodka
               </button>
@@ -106,7 +111,7 @@
             <!-- Rum Button -->
             <div id="rumInput" class="col s4 m4 l4">
               <button
-                class="btn-flat black pulse drink-wrapper-buttons"
+                class="btn light-blue darken-1 btn:hover pulse drink-wrapper-buttons"
               >
                 Rum
               </button>
@@ -115,7 +120,7 @@
             <!-- Tequila Button -->
             <div id="tequilaInput" class="col s4 m4 l4">
               <button
-                class="btn-flat black pulse drink-wrapper-buttons"
+                class="btn light-blue darken-1 btn:hover pulse drink-wrapper-buttons"
               >
                 Tequila
               </button>
@@ -125,7 +130,7 @@
             <!-- Whiskey Button -->
             <div id="whiskeyInput" class="col s4 m4">
               <button
-                class="btn-flat black pulse drink-wrapper-buttons"
+                class="btn light-blue darken-1 btn:hover pulse drink-wrapper-buttons"
               >
                 Whiskey
               </button>
@@ -133,7 +138,7 @@
             <!-- Gin Button -->
             <div id="ginInput" class="col s4 m4 l4">
               <button
-                class="btn-flat black pulse drink-wrapper-buttons"
+                class="btn light-blue darken-1 btn:hover pulse drink-wrapper-buttons"
               >
                 Gin
               </button>
@@ -144,7 +149,7 @@
               class="col s4 m4 l4"
             >
               <button
-                class="btn-flat black pulse drink-wrapper-buttons"
+                class="btn light-blue darken-1 btn:hover pulse drink-wrapper-buttons"
               >
                 Non-Alcohol
               </button>
@@ -153,7 +158,9 @@
         </div>
         <div class="row container">
           <div class="col s10 m6 l6">
-            <h5>Select a Drink</h5>
+            <h5 class="light-blue-text text-darken-1">
+              Select a Drink
+            </h5>
             <div class="row">
               <form>
                 <label for="drinkSelect"></label>
@@ -192,8 +199,7 @@
               The Alcocall App
             </h5>
             <p class="grey-text text-lighten-4">
-              You can use rows and columns here to organize
-              your footer content.
+              Your virtual bartender.
             </p>
           </div>
           <div class="col l4 offset-l2 s12">
@@ -202,51 +208,28 @@
             </h5>
             <ul>
               <li>
-                <a
-                  class="grey-text text-lighten-3"
-                  href="index.html"
-                  >Home</a
-                >
+                <a class="footer-a" href="index">Home</a>
               </li>
               <li>
-                <a
-                  class="grey-text text-lighten-3"
-                  href="recipies"
+                <a class="footer-a" href="liquor_search"
                   >Recipes</a
                 >
               </li>
               <li>
-                <a
-                  class="grey-text text-lighten-3"
-                  href="bars.html"
-                  >Bars</a
-                >
+                <a class="footer-a" href="bars">Bars</a>
               </li>
               <li>
-                <a
-                  class="grey-text text-lighten-3"
-                  href="beerSearch.html"
+                <a class="footer-a" href="beerSearch"
                   >Breweries</a
                 >
               </li>
               <li>
-                <a
-                  class="grey-text text-lighten-3"
-                  href="AlcoholReferences.html"
+                <a class="footer-a" href="AlcoholReferences"
                   >Resources</a
                 >
               </li>
               <li>
-                <a
-                  class="grey-text text-lighten-3"
-                  href="signIn.html"
-                  >Login</a
-                >
-              </li>
-              <li>
-                <a class="footer-a" href="signIn.html"
-                  >Login</a
-                >
+                <a class="footer-a" href="signIn">Login</a>
               </li>
             </ul>
           </div>
@@ -254,7 +237,9 @@
       </div>
       <div>
         <div class="container">
-          <p>
+          <p
+            class="footer-copyright grey-text text-darken-2"
+          >
             ©2020, All rights reserved: Alcocall app by The
             Coding Commanders
           </p>
@@ -264,19 +249,9 @@
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<<<<<<< HEAD
-
     <script src="/assets/js/script.js"></script>
-
-    <!-- <script src="/assets/js/script.js"></script> -->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-
-=======
     <!-- <script src="/assets/js/script.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
->>>>>>> 45a90b97c50e10edc0d172d33634c20cddfec02c
     <script
       src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
       crossorigin="anonymous"

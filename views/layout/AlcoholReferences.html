@@ -19,40 +19,36 @@
     <!-- Google Fonts -->
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Font+Kanit"
+      href="https://fonts.googleapis.com/css?family=BenchNine"
     />
 
     <!-- Custom CSS -->
-    <link href="../../public/assets/css/style.css" rel="stylesheet" />
+    <link href="/assets/css/style.css" rel="stylesheet" />
 
     <title>The Alcocall App</title>
   </head>
   <body>
+    
     <!-- Navigation Bar -->
-
-    <nav class="nav-wrapper black darken-1 z-depth-2">
+    <nav class="nav-wrapper black darken-1 z-depth-2 nav-bar">
       <div class="container">
-        <a href="index.html" class="">
+        <a href="index" class="">
           <img
             class="brand-logo"
-            src="/assets/images/alcocall_logo.png"
+            src="/assets/images/alcocall_logo-blue_sm.png"
             alt="Alcocall Logo"
           />
         </a>
         <a href="#" class="sidenav-trigger" data-target="mobile-links">
           <i class="material-icons">menu</i>
         </a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="liquor_search.html">Recipes</a></li>
-          <li><a href="random.html">Random Drink</a></li>
-          <li><a href="bars.html">Bars</a></li>
-          <li><a href="beerSearch.html">Breweries</a></li>
+        <ul class="right hide-on-med-and-down" style="font-family: BenchNine, sans-serif;">
+          <li><a href="liquor_search" class="btn:hover">Recipes</a></li>
+          <li><a href="random">Random Drink</a></li>
+          <li><a href="bars">Bars</a></li>
+          <li><a href="beerSearch">Breweries</a></li>
           <li>
-            <a
-              href="signIn.html"
-              class="btn-floating light-blue darken-1 zed-depth-0"
-              alt="Login"
-            >
+            <a href="signIn" class="btn-floating light-blue darken-1 zed-depth-0" alt="Login">
               <i class="material-icons">person</i>
             </a>
           </li>
@@ -62,65 +58,58 @@
     </nav>
 
     <ul class="sidenav white darken-2" id="mobile-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="liquor_search.html">Recipes</a></li>
-      <li><a href="bars.html">Bars</a></li>
-      <li><a href="beerSearch.html">Breweries</a></li>
-      <li><a href="login.html">Login</a></li>
+      <li><a href="index">Home</a></li>
+      <li><a href="liquor_search">Recipes</a></li>
+      <li><a href="bars">Bars</a></li>
+      <li><a href="beerSearch">Breweries</a></li>
+      <li><a href="login">Login</a></li>
     </ul>
-			<!-- End of Navigation Bar -->
+    <!-- End of navigation bar and side bar -->
 
 			<!-- Start of main container -->
-			<main class="container">
-				<span class="card-title">Bar Locater</span>
+			<main class="container main-content">
 				<h3>Want to continue your Alcoholic Education?</h3>
-				<h5>Here are some outside resources...</h5>
-			<ul><a href=https://www.thespruceeats.com/bartending-tips-for-better-drinks-4105954>Bartending 101: The Spruce Eats</a></ul>
-			<ul><a href=https://www.nationalgeographic.com/magazine/2017/02/alcohol-discovery-addiction-booze-human-culture/>"Our 9,000 Year Love Affair With Booze" by NatGeo</a></ul>
-			<ul><a href=http://alcohol-facts.net/Alcohol-History-Facts.html>Alcohol History Facts</a></ul>
+				<h5 class="light-blue-text text-darken-1">Here are some outside resources...</h5>
+			<ul><a class="resource-a" href=https://www.thespruceeats.com/bartending-tips-for-better-drinks-4105954>Bartending 101: The Spruce Eats</a></ul>
+			<ul><a class="resource-a" href=https://www.nationalgeographic.com/magazine/2017/02/alcohol-discovery-addiction-booze-human-culture/>"Our 9,000 Year Love Affair With Booze" by NatGeo</a></ul>
+			<ul><a class="resource-a" href=http://alcohol-facts.net/Alcohol-History-Facts.html>Alcohol History Facts</a></ul>
 			<br>
-			<br>
-			<br>
-			<h5>And we hope you are drinking responsibly, but remember, Help is always available!</h5>
-			<ul><a href=https://www.niaaa.nih.gov>The National Institute on Alcoholism and Alcohol Abuse</a></ul>
-			<ul><a href=https://www.aa.org/pages/en_US/find-aa-resources>Alcoholics Anonymous</a></ul>
+			<h5 class="light-blue-text text-darken-1">And we hope you are drinking responsibly, but remember, Help is always available!</h5>
+			<ul><a class="resource-a" href=https://www.niaaa.nih.gov>The National Institute on Alcoholism and Alcohol Abuse</a></ul>
+			<ul><a class="resource-a" href=https://www.aa.org/pages/en_US/find-aa-resources>Alcoholics Anonymous</a></ul>
 
 			</main>
 
-			    <!-- Footer Starts -->
-				<footer class="page-footer black">
-					<div class="container">
-					  <div class="row">
-						<div class="col l6 s12">
-						  <h5 class="white-text">The Alcocall App</h5>
-						  <p class="grey-text text-lighten-4">
-							You can use rows and columns here to organize your footer content.
-						  </p>
-						</div>
-						<div class="col l4 offset-l2 s12">
-						  <h5 class="white-text">Links</h5>
-						  <ul>
-							  <li><a class="grey-text text-lighten-3" href="index.html">Home</a></li>
-							  <li><a class="grey-text text-lighten-3" href="recipies">Recipes</a></li>
-							  <li><a class="grey-text text-lighten-3" href="bars.html">Bars</a></li>
-							  <li><a class="grey-text text-lighten-3" href="beerSearch.html">Breweries</a></li>
-							  <li><a class="grey-text text-lighten-3" href="AlcoholReferences.html">Resources</a></li>
-							  <li><a class="grey-text text-lighten-3" href="signIn.html">Login</a></li>
-						</div>
-					  </div>
-					</div>
-					<div class="footer-copyright">
-					  <div class="container">
-						<p>
-						  ©2020, All rights reserved: Alcocall app by The Coding Commanders
-						</p>
-					  </div>
-					</div>
-				  </footer>
+    <!-- Footer Starts -->
+    <footer class="page-footer black">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="light-blue-text text-darken-1">The Alcocall App</h5>
+            <p class="grey-text text-lighten-4">Your virtual bartender.</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="light-blue-text text-darken-1">Links</h5>
+            <ul>
+              <li><a class="footer-a" href="index">Home</a></li>
+              <li><a class="footer-a" href="liquor_search">Recipes</a></li>
+              <li><a class="footer-a" href="bars">Bars</a></li>
+              <li><a class="footer-a" href="beerSearch">Breweries</a></li>
+              <li><a class="footer-a" href="AlcoholReferences">Resources</a></li>
+              <li><a class="footer-a" href="signIn">Login</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="container">
+        <p class="footer-copyright grey-text text-darken-2">©2020, All rights reserved: Alcocall app by The Coding Commanders</p>
+        </div>
+      </div>
+    </footer>
 			  
 				  <!-- Compiled and minified JavaScript -->
 				  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 				  <script src="/assets/js/script.js"></script>
-				  <script src="/assets/js/beerSearch.js"></script>
 				</body>
 			  </html>

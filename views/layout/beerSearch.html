@@ -9,11 +9,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
     <!-- Compiled and minified JavaScript -->
-<<<<<<< HEAD
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
-=======
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
->>>>>>> 45a90b97c50e10edc0d172d33634c20cddfec02c
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!--Import Google Icons-->
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -36,7 +32,7 @@
     <!-- Navigation Bar -->
     <nav class="nav-wrapper black darken-1 z-depth-2 nav-bar">
       <div class="container">
-        <a href="index.html" class="">
+        <a href="index" class="">
           <img
             class="brand-logo"
             src="/assets/images/alcocall_logo-blue_sm.png"
@@ -47,12 +43,12 @@
           <i class="material-icons">menu</i>
         </a>
         <ul class="right hide-on-med-and-down" style="font-family: BenchNine, sans-serif;">
-          <li><a href="liquor_search.html">Recipes</a></li>
-          <li><a href="random.html">Random Drink</a></li>
-          <li><a href="bars.html">Bars</a></li>
-          <li><a href="beerSearch.html">Breweries</a></li>
+          <li><a href="liquor_search">Recipes</a></li>
+          <li><a href="random">Random Drink</a></li>
+          <li><a href="bars">Bars</a></li>
+          <li><a href="beerSearch">Breweries</a></li>
           <li>
-            <a href="signIn.html" class="btn-floating light-blue darken-1 zed-depth-0" alt="Login">
+            <a href="signIn" class="btn-floating light-blue darken-1 zed-depth-0" alt="Login">
               <i class="material-icons">person</i>
             </a>
           </li>
@@ -62,11 +58,11 @@
     </nav>
 
     <ul class="sidenav white darken-2" id="mobile-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="liquor_search.html">Recipes</a></li>
-      <li><a href="bars.html">Bars</a></li>
-      <li><a href="beerSearch.html">Breweries</a></li>
-      <li><a href="login.html">Login</a></li>
+      <li><a href="index">Home</a></li>
+      <li><a href="liquor_search">Recipes</a></li>
+      <li><a href="bars">Bars</a></li>
+      <li><a href="beerSearch">Breweries</a></li>
+      <li><a href="login">Login</a></li>
     </ul>
     <!-- End of navigation bar and side bar -->
 
@@ -78,8 +74,12 @@
         <div class="input-field col s12 l9">
           <input placeholder="City Name" id="firstName" type="text" class="validate">
           <label class="" for="city_name">City Name</label>
+        
         </div>
-        <a class="col s8 l3 center btn:hover btn light-blue darken-1">Find Local Beer!</a>
+      </form>
+        <a class="col s8 l3 center btn:hover btn light-blue darken-1" id="button">Find Local Beer!</a>
+      </br>
+    </br>
 	  <div id="brewery"></div>
     </main>
     <!--End of main content-->
@@ -92,17 +92,17 @@
           <div class="row">
             <div class="col l6 s12">
               <h5 class="light-blue-text text-darken-1">The Alcocall App</h5>
-              <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              <p class="grey-text text-lighten-4">Your virtual bartender.</p>
             </div>
             <div class="col l4 offset-l2 s12">
               <h5 class="light-blue-text text-darken-1">Links</h5>
               <ul>
-                <li><a class="footer-a" href="index.html">Home</a></li>
-                <li><a class="footer-a" href="recipies">Recipes</a></li>
-                <li><a class="footer-a"href="bars.html">Bars</a></li>
-                <li><a class="footer-a" href="beerSearch.html">Breweries</a></li>
-                <li><a class="footer-a" href="AlcoholReferences.html">Resources</a></li>
-                <li><a class="footer-a" href="signIn.html">Login</a></li>
+                <li><a class="footer-a" href="index">Home</a></li>
+                <li><a class="footer-a" href="liquor_search">Recipes</a></li>
+                <li><a class="footer-a" href="bars">Bars</a></li>
+                <li><a class="footer-a" href="beerSearch">Breweries</a></li>
+                <li><a class="footer-a" href="AlcoholReferences">Resources</a></li>
+                <li><a class="footer-a" href="signIn">Login</a></li>
               </ul>
             </div>
           </div>
@@ -115,22 +115,16 @@
       </footer>
 
     <!-- Compiled and minified JavaScript -->
-    <script src="/assets/js/beerSearch.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
     <!-- <script src="/assets/js/script.js"></script> -->
-
-    <!-- <script src="/assets/js/script.js"></script> -->
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-
     <script
-      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"
       crossorigin="anonymous"
     ></script>
+    <script src="/assets/js/beerSearch.js"></script>
     
-   
+	<!-- <script src="/assets/js/script.js"></script> -->
 	
   </body>
 </html>

@@ -9,15 +9,8 @@ if (process.env.JAWSDB_URL) {
     host: "localhost",
     port: 3306,
     user: "root",
-<<<<<<< HEAD
-
-    password: "Zugger9114",
-
-    database: "userInfo_db"
-=======
     password: ")F*WGUsVpV",
     database: "userInfo_db",
->>>>>>> 45a90b97c50e10edc0d172d33634c20cddfec02c
   });
 }
 

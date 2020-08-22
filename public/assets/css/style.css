@@ -15,6 +15,7 @@
 
 .main-content {
   margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .wide-container {
@@ -32,6 +33,11 @@ a {
   font-family: BenchNine, serif;
   color: white;
   font-size: large;
+}
+
+.resource-a {
+  font-family: BenchNine, serif;
+  color: rgb(75, 75, 75);
 }
 
 .footer-a {
@@ -96,6 +102,10 @@ a:hover {
   height: auto;
 }
 
+button {
+  font-family: BenchNine, serif;
+}
+
 p {
   font-family: BenchNine, sans-serif;
   font-size: large;
@@ -107,9 +117,15 @@ h1 {
   font-size: large;
 }
 
+h3 {
+  font-family: BenchNine, sans-serif;
+  color: rgb(75, 75, 75);
+  font-weight: bold;
+}
+
 h5 {
   font-family: BenchNine, sans-serif;
-  color: dimgray;
+  color: rgb(75, 75, 75);
   font-weight: bold;
 }
 
@@ -122,7 +138,7 @@ h5 {
 }
 
 .drink-wrapper-buttons {
-  color: gold;
+  color: white;
 }
 
 .media-section {
