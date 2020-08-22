@@ -28,41 +28,71 @@ router.get("/api", function (req, res) {
 });
 
 router.get("/", function (req, res) {
-  res.sendFile(path.join(__dirname + "/../views/layout/", "signIn.html"));
-  // res.render("index", object);
-});
-
-router.get("/liquor_search.html", function (req, res) {
   res.sendFile(
-    path.join(__dirname + "/../views/layout/", "liquor_search.html")
+    path.join(
+      __dirname + "/../views/layout/",
+      "signIn.html"
+    )
   );
   // res.render("index", object);
 });
 
-router.get("/bars.html", function (req, res) {
-  res.sendFile(path.join(__dirname + "/../views/layout/", "bars.html"));
+router.get("/liquor_search", function (req, res) {
+  res.sendFile(
+    path.join(
+      __dirname + "/../views/layout/",
+      "liquor_search.html"
+    )
+  );
   // res.render("index", object);
 });
 
-router.get("/beerSearch.html", function (req, res) {
-  res.sendFile(path.join(__dirname + "/../views/layout/", "beersearch.html"));
-});
-
-router.get("/random.html", function (req, res) {
-  res.sendFile(path.join(__dirname + "/../views/layout/", "random.html"));
-});
-
-router.get("/AlcoholReferences.html", function (req, res) {
+router.get("/bars", function (req, res) {
   res.sendFile(
-    path.join(__dirname + "/../views/layout/", "AlcoholReferences.html")
+    path.join(__dirname + "/../views/layout/", "bars.html")
+  );
+  // res.render("index", object);
+});
+
+router.get("/beerSearch", function (req, res) {
+  res.sendFile(
+    path.join(
+      __dirname + "/../views/layout/",
+      "beersearch.html"
+    )
   );
 });
 
-router.get("/index.html", function (req, res) {
-  res.sendFile(path.join(__dirname + "/../views/layout/", "index.html"));
+router.get("/random", function (req, res) {
+  res.sendFile(
+    path.join(
+      __dirname + "/../views/layout/",
+      "random.html"
+    )
+  );
 });
-router.get("/signIn.html", function (req, res) {
-  res.sendFile(path.join(__dirname + "/../views/layout/", "signIn.html"));
+
+router.get("/AlcoholReferences", function (req, res) {
+  res.sendFile(
+    path.join(
+      __dirname + "/../views/layout/",
+      "AlcoholReferences.html"
+    )
+  );
+});
+
+router.get("/index", function (req, res) {
+  res.sendFile(
+    path.join(__dirname + "/../views/layout/", "index.html")
+  );
+});
+router.get("/signIn", function (req, res) {
+  res.sendFile(
+    path.join(
+      __dirname + "/../views/layout/",
+      "signIn.html"
+    )
+  );
 });
 
 router.post("/api/userInfo", function (req, res) {
