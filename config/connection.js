@@ -8,11 +8,7 @@ if (process.env.JAWSDB_URL) {
     port: 3306,
     user: "root",
 
-    password: "Phoenix11!",
-
-    password: ")F*WGUsVpV",
-
-    database: "userInfo_db",
+    password: "Zugger9114",
 
     database: "userInfo_db"
   });

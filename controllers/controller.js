@@ -8,8 +8,22 @@ const bcrypt = require("bcryptjs");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/api", function (req, res) {
+  req.params.userName;
+  userName = req.query.userName;
+  password = req.query.password;
+  console.log(userName, password);
+
   userInfo.all(function (result) {
-    res.json(result);
+    let loggedIn = false;
+    for (i = 0; i < result.length; i++) {
+      if (
+        result[i].userName === userName &&
+        bcrypt.compareSync(password, result[i].password)
+      ) {
+        loggedIn = true;
+      }
+    }
+    res.json(loggedIn);
   });
 });
 

@@ -90,13 +90,14 @@ function signUp() {
           return alert("all fields must be filled out");
         }
         if (moment().diff($("#DOB").val().trim(), "years") < 21) {
+          console.log($("#DOB").val().trim());
           return alert("sorry you're too young to enjoy booze!");
         } else {
           $.ajax("/api/userInfo", {
             type: "POST",
             data: newUserName
           }).then(function (result) {
-            console.log(result);
+            // console.log(result);
           });
 
           alert("created an account, please sign in.");
@@ -114,29 +115,39 @@ function signIn() {
   $("body").on("click", function (event) {
     if (event.target.matches("#submit2")) {
       event.preventDefault();
-      console.log("submit");
+      console.log("submit2");
       var newUserName = {
         userName: $("#userName").val().trim(),
         password: $("#password").val().trim()
       };
+      userName = $("#userName").val().trim();
+      password = $("#password").val().trim();
 
-      $.get("/api", function (data) {
-        if (newUserName.userName === "" || newUserName.password === "") {
-          return alert("all fields must be filled out");
+      $.get("/api?userName=" + userName + "&password=" + password, function (
+        data
+      ) {
+        console.log(data);
+        if (data === true) {
+          window.location.replace("index.html");
+        } else {
+          alert("incorrect username and password combination.");
         }
-        // console.log(data[0].userName);
-        for (i = 0; i < data.length; i++) {
-          if (
-            data[i].userName === $("#userName").val().trim() &&
-            data[i].password !== $("#password").val().trim()
-          ) {
-            alert("incorrect username and password combination");
-          } else {
-            //render new html
+        // if (newUserName.userName === "" || newUserName.password === "") {
+        //   return alert("all fields must be filled out");
+        // }
+        // // console.log(data[0].userName);
+        // for (i = 0; i < data.length; i++) {
+        //   if (
+        //     data[i].userName === $("#userName").val().trim() &&
+        //     data[i].password !== $("#password").val().trim()
+        //   ) {
+        //     alert("incorrect username and password combination");
+        //   } else {
+        //     //render new html
 
-            window.location.replace("index.html");
-          }
-        }
+        //     window.location.replace("index.html");
+        //   }
+        // }
       });
     }
   });
